@@ -1,8 +1,8 @@
 site_name: CloudIaC文档中心
 docs_dir: "mkdocs"
 repo_url: https://github.com/idcos/cloudiac-docs
-repo_name: IDCOS/CloudIaC
-edit_uri: edit/master/mkdocs/
+repo_name: cloudiac-docs
+edit_uri: edit/master/docs/mkdocs/
 theme:
   language: zh
   name: material

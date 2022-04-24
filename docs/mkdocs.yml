@@ -68,10 +68,10 @@ nav:
     - "云模板 Pipeline": manual/pipeline.md
     - "通用功能": manual/others.md
   - "Registry":
-    - "Registry 介绍": ""
-    - "Provider 发布": ""
-    - "Module 发布": ""
-    - "合规策略发布": ""
+    - "Registry 介绍": "manual/registry.md"
+    - "Provider 发布": "manual/provider-publish.md"
+    - "Module 发布": "manual/module-publish.md"
+    - "合规策略发布": "manual/policy-group-publish.md"
   - "使用教程": tutorial/index.md
   - "部署安装": 
     - "容器部署": installation/container.md
@@ -83,4 +83,3 @@ nav:
 #    - "API简介": api-docs/index.md
 #  - "常见问题":
 #    - "常见问题": answer-questions/index.md
-

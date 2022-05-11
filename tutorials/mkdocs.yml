@@ -23,12 +23,12 @@ extra:
     provider: mike
     default: latest
 extra_css:
-  - 'assets/css/custom.css'
-  - 'assets/css/simpleLightbox.min.css'
+  - "assets/css/custom.css"
+  - "assets/css/simpleLightbox.min.css"
 extra_javascript:
-  - 'assets/js/jquery.min.js'
-  - 'assets/js/simpleLightbox.min.js'
-  - 'assets/js/custom.js'
+  - "assets/js/jquery.min.js"
+  - "assets/js/simpleLightbox.min.js"
+  - "assets/js/custom.js"
 markdown_extensions:
   - markdown.extensions.attr_list
   - meta
@@ -48,10 +48,10 @@ markdown_extensions:
           format: "!!python/name:mermaid2.fence_mermaid"
 
 nav:
-  - "快速入门": 
-    - "创建组织和项目": quick-start/create-org-project.md
-    - "创建云模板": quick-start/create-template.md
-    - "部署环境": quick-start/deploy-env.md
+  - "快速入门":
+      - "创建组织和项目": quick-start/create-org-project.md
+      - "创建云模板": quick-start/create-template.md
+      - "部署环境": quick-start/deploy-env.md
 
   #- "Registry":
   #  - "Provider 发布": "manual/provider-publish.md"
@@ -59,7 +59,7 @@ nav:
   #  - "使用本地发布的 provider": ""
   #  - "合规策略发布": "manual/policy-group-publish.md"
 
-  #- "典型场景": 
+  - "典型场景":
   #  - "创建 aliyun ecs": "cases/aliyun-ecs.md"
   #  - "环境完整创建过程": "cases/all-in-one-example.md"
   #  - "创建合规策略组": ""
@@ -67,7 +67,7 @@ nav:
   #  - "为环境开启合规策略": ""
   #  - "使用合规策略限制测试环境的机器规格": ""
   #  - "使用漂移检测": ""
-  #  - "环境创建成功后定时销毁": ""
+    - "环境创建成功后定时销毁": "cases/env-auto-destroy.md"
   #  - "添加部署失败通知": |
   #      演示各种通知渠道的配置方法，如何获取 token，url 如何填写
   #  - "通过 tfvars 文件预定义变量": |
@@ -78,10 +78,9 @@ nav:
   #  - "添加 SSH 密钥": |
   #      密钥如何生成，如何添加到平台，如何在云模板中将公钥绑定到创建的资源(演示 aliyun ecs)
   #  - "在云模板中指定 terraform 版本": ""
-  #  - "使用 Registry 中的策略组": ""
+    - "使用 Registry 中的策略组": "cases/registry-policygroup.md"
   #  - "接入 LDAP 认证": ""
   #  - "创建 ansible host group": |
   #      创建 ansible host group，并给主机组添加变量，然后演示在 playbook 中使用主机组及其变量
   #  - "通过环境变量开启 terraform 和 ansible 日志": "TF_LOG=debug, ANSIBLE_VERBOSITY=2"
   #  - "自定义 runner 镜像": ""
-

@@ -63,7 +63,7 @@ nav:
       - "安全合规": manual/compliance.md
       - "云模板 Pipeline": manual/pipeline.md
       - "通用功能": manual/others.md
-      - "通用功能": manual/registry-policygroup.md
+      - "Regitstry 中的策略组使用": manual/registry-policygroup.md
   - "Registry":
       - "Registry 介绍": "manual/registry.md"
       - "Provider 发布": "manual/provider-publish.md"

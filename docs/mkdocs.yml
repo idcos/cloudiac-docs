@@ -64,6 +64,7 @@ nav:
       - "云模板 Pipeline": manual/pipeline.md
       - "通用功能": manual/others.md
       - "Regitstry 中的策略组使用": manual/registry-policygroup.md
+      - "环境创建后定时销毁": manual/env-auto-destroy.md
   - "Registry":
       - "Registry 介绍": "manual/registry.md"
       - "Provider 发布": "manual/provider-publish.md"

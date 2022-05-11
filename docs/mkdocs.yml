@@ -53,10 +53,6 @@ nav:
     - "功能特性": intro/product-features.md
     - "产品优势": intro/product-advantage.md
     - "产品构架": intro/product-architecture.md
-  - "快速入门": 
-    - "创建组织和项目": quick-start/create-org-project.md
-    - "创建云模板": quick-start/create-template.md
-    - "部署环境": quick-start/deploy-env.md
   - "产品手册": 
     - "组织/项目/角色": manual/org-project-role.md
     - "VCS 管理": manual/vcs.md
@@ -72,7 +68,6 @@ nav:
     - "Provider 发布": "manual/provider-publish.md"
     - "Module 发布": "manual/module-publish.md"
     - "合规策略发布": "manual/policy-group-publish.md"
-  - "使用教程": tutorial/index.md
   - "部署安装": 
     - "容器部署": installation/container.md
     - "二进制部署": installation/linux.md

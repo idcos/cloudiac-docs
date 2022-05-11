@@ -90,7 +90,7 @@ CloudIaC提供以下几种角色：
 	- 在组织内拥有所有权限
 - Member：普通用户
 	- 根据管理员授予的项目角色拥有相应的权限
-- Member：合规管理员
+- ComplianceManager：合规管理员
 	- 拥有合规中心的管理权限
 
 ![image-20211224140119458](../images/image-20211224140119458.png){.img-fluid}

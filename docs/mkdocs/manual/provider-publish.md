@@ -22,30 +22,27 @@ gpg -u "$GPG_EMAIL" --detach-sign terraform-provider-${TYPE}_${VERSION}_SHA256SU
 
 [terraform docs 规范文档](https://www.terraform.io/docs/registry/providers/docs.html)
 
-docs 编写完成后打为 zip 包：zip docs.zip -r docs
+docs 编写完成后打为 zip 包：zip terraform-provider-${TYPE}_${VERSION}_docs.zip -r docs
 
 此时目录中的文件列表如下(cloudiac_1.0.0 为示例):
 
 ```bash
-docs.zip
+terraform-provider-cloudiac_1.0.0_docs.zip
 terraform-provider-cloudiac_1.0.0_linux_amd64.zip
 terraform-provider-cloudiac_1.0.0_linux_386.zip
 terraform-provider-cloudiac_1.0.0_SHA256SUMS
 terraform-provider-cloudiac_1.0.0_SHA256SUMS.sig
 ```
 
-6、将上一步生成的所有 zip 文件、SHA256SUMS 文件和 SHA256SUMS.sig 文件上传到任一 http 服务器
-
-要求上传后我们可以通过类型这样的 url 下载文件:  
+6、将上一步生成的所有 zip 文件、SHA256SUMS 文件和 SHA256SUMS.sig 文件上传到任意 http 服务器，保证上传后我们可以通过类型下面的 url 下载文件:  
 
 https://static.example.org/providers/cloudiac/1.0.0/terraform-provider-cloudiac_1.0.0_linux_386.zip
 
 7、登录 registry 执行发布:
 
-下载路径可以是 zip 包或者是 SHA256SUMS 文件，如果是 zip 包则只发布指定的平台，如果是 SHA256SUMS 文件则发布 SHA256SUMS 文件中包含的所有 zip 包。
-
-如果下载路径同目录下有 docs.zip 文件，则在发布时也会同时下载 docs 文件并解析生成 provider 文档。生成的文档可以在 registry 平台查看。
-
 ![img](../images/registry-provider-publish1.png){.img-fluid}
 
 ![img](../images/registry-provider-publish2.png){.img-fluid}
+
+- 下载路径可以是 zip 包或者是 SHA256SUMS 文件，如果下载路径是 SHA256SUMS 文件则会发布文件中包含的所有 zip 包
+- 如果下载路径同目录下有 terraform-provider-${TYPE}_${VERSION}_docs.zip 文件，则在发布时也会同时下载 docs 并解析生成 provider 文档，生成的文档可以在 registry 平台查看

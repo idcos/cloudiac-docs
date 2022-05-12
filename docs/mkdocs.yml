@@ -3,15 +3,6 @@ docs_dir: "mkdocs"
 repo_url: https://github.com/idcos/cloudiac-docs
 repo_name: cloudiac-docs
 edit_uri: edit/master/docs/mkdocs/
-theme:
-  language: zh
-  name: material
-  logo: assets/svg/icon.svg
-  favicon: assets/svg/icon.svg
-  palette:
-    primary: deep purple
-  icon:
-    repo: fontawesome/brands/github
 plugins:
   - search:
       lang:
@@ -29,24 +20,7 @@ extra_javascript:
   - 'assets/js/jquery.min.js'
   - 'assets/js/simpleLightbox.min.js'
   - 'assets/js/custom.js'
-markdown_extensions:
-  - markdown.extensions.attr_list
-  - meta
-  - toc:
-      permalink: "#"
-      baselevel: 1
-      separator: "_"
-  - footnotes
-  - admonition
-  - pymdownx.details
-  - attr_list
-  - pymdownx.inlinehilite
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: "!!python/name:mermaid2.fence_mermaid"
-
+dev_addr: '127.0.0.1:8002'
 nav:
   - "产品介绍": 
     - "产品概述": index.md
@@ -65,9 +39,6 @@ nav:
     - "通用功能": manual/others.md
   - "Registry":
     - "Registry 介绍": "manual/registry.md"
-    - "Provider 发布": "manual/provider-publish.md"
-    - "Module 发布": "manual/module-publish.md"
-    - "合规策略发布": "manual/policy-group-publish.md"
   - "部署安装": 
     - "容器部署": installation/container.md
     - "二进制部署": installation/linux.md

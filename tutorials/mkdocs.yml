@@ -60,6 +60,10 @@ nav:
   #  - "合规策略发布": "manual/policy-group-publish.md"
 
   - "典型场景":
+    - "云模板terraform版本选择": "cases/cloud_template.md"
+    - "资源创建": "cases/all-in-one-example.md"
+    - "漂移检测": "cases/drift_detection.md"
+    - "添加SSH密钥": "cases/ssh_key.md"
   #  - "创建 aliyun ecs": "cases/aliyun-ecs.md"
   #  - "环境完整创建过程": "cases/all-in-one-example.md"
   #  - "创建合规策略组": ""

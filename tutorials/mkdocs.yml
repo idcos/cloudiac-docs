@@ -54,22 +54,25 @@ nav:
       - "部署环境": quick-start/deploy-env.md
 
   - "Registry":
-    - "Registry 介绍": "cases/registry.md"
     - "Provider 发布": "cases/provider-publish.md"
     - "Module 发布": "cases/module-publish.md"
-    - "合规策略组发布": "cases/policy-group-publish.md"
+    - "策略组发布": "cases/policy-group-publish.md"
+    - "获取签名密钥": cases/create-gpg-key.md
+    - "添加签名密钥": cases/add-gpg-key.md
+    - "vcs集成": cases/create-vcs.md
+    - "token获取": cases/token.md
 
   - "典型场景":
     - "资源创建": "cases/all-in-one-example.md"
     - "漂移检测": "cases/drift_detection.md"
     - "添加SSH密钥": "cases/ssh_key.md"
     - "云模板terraform版本选择": "cases/cloud_template.md"
-    - "创建合规策略组": "cases/create-policy-group.md"
+    - "创建策略组": "cases/create-policy-group.md"
     - "为云模板开启合规策略": "cases/template-enable-policy.md"
     - "为环境开启合规策略": "cases/env-enable-policy.md"
     - "环境创建成功后定时销毁": "cases/env-auto-destroy.md"
     - "添加部署失败通知": "cases/deploy-failed-notification.md"
-    - "使用 registry 的 provider": "cases/use-provider.md"
+    - "使用 Registry 的 Provider": "cases/use-provider.md"
     - "使用合规策略限制测试环境的机器规格": "cases/opa-instance-type.md"
     - "环境创建成功后定时销毁": "cases/env-auto-destroy.md"
     - "使用 Registry 中的策略组": "cases/registry-policygroup.md"

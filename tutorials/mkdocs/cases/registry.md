@@ -14,9 +14,9 @@ cloudiac账号的获取请联系管理员
 github账号请访问github官网注册
 
 
-# 产品功能
-## vcs管理
-### 什么是vcs
+## 产品功能
+### vcs管理
+#### 什么是vcs
 
 VCS是版本控制系统的简称（Version Control System）
 
@@ -24,7 +24,7 @@ registry中模块发布以及合格策略组的发布都通过VCS（版本控制
 
 registry通过添加VCS的方式来集成版本控制系统，从而获取代码仓库中的配置文件
 
-### vcs的类型
+#### vcs的类型
 
 registry目前支持以下四种VCS集成：
 

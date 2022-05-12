@@ -53,11 +53,11 @@ nav:
       - "创建云模板": quick-start/create-template.md
       - "部署环境": quick-start/deploy-env.md
 
-  #- "Registry":
-  #  - "Provider 发布": "manual/provider-publish.md"
-  #  - "Module 发布": "manual/module-publish.md"
-  #  - "使用本地发布的 provider": ""
-  #  - "合规策略发布": "manual/policy-group-publish.md"
+  - "Registry":
+    - "Registry 介绍": "cases/registry.md"
+    - "Provider 发布": "cases/provider-publish.md"
+    - "Module 发布": "cases/module-publish.md"
+    - "合规策略组发布": "cases/policy-group-publish.md"
 
   - "典型场景":
     - "云模板terraform版本选择": "cases/cloud_template.md"
@@ -66,9 +66,10 @@ nav:
     - "添加SSH密钥": "cases/ssh_key.md"
   #  - "创建 aliyun ecs": "cases/aliyun-ecs.md"
   #  - "环境完整创建过程": "cases/all-in-one-example.md"
-  #  - "创建合规策略组": ""
-  #  - "为云模板开启合规策略": ""
-  #  - "为环境开启合规策略": ""
+    - "创建合规策略组": "cases/create-policy-group.md"
+    - "为云模板开启合规策略": "cases/template-enable-policy.md"
+    - "为环境开启合规策略": "cases/env-enable-policy.md"
+    - "使用 registry 的 provider": "cases/use-provider.md"
   #  - "使用合规策略限制测试环境的机器规格": ""
   #  - "使用漂移检测": ""
     - "环境创建成功后定时销毁": "cases/env-auto-destroy.md"

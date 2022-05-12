@@ -1,4 +1,4 @@
-site_name: CloudIaC文档中心
+site_name: 文档
 docs_dir: "mkdocs"
 repo_url: https://github.com/idcos/cloudiac-docs
 repo_name: cloudiac-docs

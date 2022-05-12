@@ -3,6 +3,15 @@ docs_dir: "mkdocs"
 repo_url: https://github.com/idcos/cloudiac-docs
 repo_name: cloudiac-docs
 edit_uri: edit/master/docs/mkdocs/
+theme:
+  language: zh
+  name: material
+  logo: assets/svg/icon.svg
+  favicon: assets/svg/icon.svg
+  palette:
+    primary: deep purple
+  icon:
+    repo: fontawesome/brands/github
 plugins:
   - search:
       lang:
@@ -57,23 +66,10 @@ nav:
       - "安全合规": manual/compliance.md
       - "云模板 Pipeline": manual/pipeline.md
       - "通用功能": manual/others.md
-  - "Registry":
-<<<<<<< HEAD
-    - "Registry 介绍": "manual/registry.md"
   - "部署安装": 
     - "容器部署": installation/container.md
     - "二进制部署": installation/linux.md
     - "Consul开启acl和tls": installation/consul.md
-=======
-      - "Registry 介绍": "manual/registry.md"
-      - "Provider 发布": "manual/provider-publish.md"
-      - "Module 发布": "manual/module-publish.md"
-      - "合规策略发布": "manual/policy-group-publish.md"
-  - "部署安装":
-      - "容器部署": installation/container.md
-      - "二进制部署": installation/linux.md
-      - "Consul开启acl和tls": installation/consul.md
->>>>>>> d413e6e1adb8d45197fe54827bd5d8bc86dd6d80
   - "Releases": releases.md
   - "视频介绍": https://space.bilibili.com/2138433328/channel/seriesdetail?sid=1908688
 #  - "API文档":

@@ -63,6 +63,7 @@ nav:
     - "token获取": cases/token.md
 
   - "典型场景":
+    - "创建 aliyun ecs": "cases/aliyun-ecs.md"
     - "资源创建": "cases/all-in-one-example.md"
     - "漂移检测": "cases/drift_detection.md"
     - "添加SSH密钥": "cases/ssh_key.md"

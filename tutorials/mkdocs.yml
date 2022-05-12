@@ -68,7 +68,7 @@ nav:
   #  - "使用合规策略限制测试环境的机器规格": ""
   #  - "使用漂移检测": ""
     - "环境创建成功后定时销毁": "cases/env-auto-destroy.md"
-  #  - "添加部署失败通知": |
+    - "添加部署失败通知": "cases/deploy-failed-notification.md"
   #      演示各种通知渠道的配置方法，如何获取 token，url 如何填写
   #  - "通过 tfvars 文件预定义变量": |
   #      定义 dev.tfvars 和 prod.tfvars，分别用于开发环境和生成环境部署，其中使用的 vpc、实例规格等都不同

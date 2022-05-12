@@ -11,7 +11,7 @@ docker环境一键部署,需要您安装了docker环境同时支持docker-compos
 ## 获取仓库代码,shell目录,可执行文件iac-docker.sh
 https://github.com/idcos/cloudiac.git
 
-##执行 iac-docker.sh,按照提示选择对应的版本安装
+##执行 bash iac-docker.sh,按照提示选择对应的版本安装
 bash iac-docker.sh
 ```
 
@@ -24,6 +24,6 @@ Kubernetes环境一键部署,需要您安装了Kubernetes环境和git环境
 ## 获取仓库代码,shell目录,可执行文件iac-k8s.sh
 https://github.com/idcos/cloudiac.git
 
-##执行 iac-k8s.sh,按照提示选择对应的版本安装
+##执行 bash iac-k8s.sh,按照提示选择对应的版本安装
 bash iac-k8s.sh
 ```

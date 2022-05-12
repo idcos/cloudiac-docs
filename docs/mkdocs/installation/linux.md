@@ -5,8 +5,9 @@
 1. 操作系统：Centos 7 及以上版本
 2. 中间件：MySQL 8.0、Consul
 
-!!! Info
-    理论上任意 Linux 发行版本都可以支持部署，但该文档仅以 Centos 系统为例演示部署过程。
+:::tip
+理论上任意 Linux 发行版本都可以支持部署，但该文档仅以 Centos 系统为例演示部署过程。
+:::
 
 ## 后端部署
 
@@ -36,8 +37,9 @@ for PACK in cloudiac cloudiac-repos cloudiac-providers; do
 done
 ```
 
-!!! Caution
-    **部署目录必须为 /usr/yunji/cloudiac，部署到其他目录将无法执行环境部署任务。**
+:::important
+部署目录必须为 /usr/yunji/cloudiac，部署到其他目录将无法执行环境部署任务。
+:::
 
 ### 2. 安装并启动 Docker
 
@@ -99,16 +101,18 @@ mv demo-conf.yml.sample demo-conf.yml
 
 - 编辑 .env 文件，依据注释修改配置。
 
-!!! Caution
-    `.env` 中以下配置为**必填项**，其他配置可根据需要修改：
+:::note
+`.env` 中以下配置为**必填项**，其他配置可根据需要修改：
 
-    - IAC_ADMIN_PASSWORD: 初始的平台管理员密码
-    - SECRET_KEY: 数据加密存储时使用的密钥
-    - PORTAL_ADDRESS: 对外地址服务的地址
-    - CONSUL_ADDRESS: consul 服务地址，配置为部署机内网 ip:8500 端口即可
+- IAC_ADMIN_PASSWORD: 初始的平台管理员密码
+- SECRET_KEY: 数据加密存储时使用的密钥
+- PORTAL_ADDRESS: 对外地址服务的地址
+- CONSUL_ADDRESS: consul 服务地址，配置为部署机内网 ip:8500 端口即可
+:::
 
-!!! Info
-    通过 `.env` 可以实现大部分配置的修改，更多配置项可查看 config-portal.yml 和 config-runner.yml。
+:::tip
+通过 `.env` 可以实现大部分配置的修改，更多配置项可查看 config-portal.yml 和 config-runner.yml。
+:::
 
 
 ### 6. 初始化 Mysql

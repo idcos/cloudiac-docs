@@ -1,9 +1,10 @@
 # consul开启acl和tls
 
-!!!info
-    该文档用于部署的环境中开启consul的acl验证和tls访问。
+:::tip
+该文档用于部署的环境中开启consul的acl验证和tls访问。
 
-    以下操作均在 cloudiac 部署目录 `/usr/yunji/cloudiac` 下执行。
+以下操作均在 cloudiac 部署目录 `/usr/yunji/cloudiac` 下执行。
+:::
 
 ## 1. 准备 acl.hcl配置文件 
 
@@ -21,10 +22,11 @@ EOF
 
 ## 2. 准备tls证书
 
-!!!info
-    此处采用openssl生成私有化证书,也可以自己向机构申请证书
+:::tip
+此处采用openssl生成私有化证书,也可以自己向机构申请证书
 
-    证书名称为 ca.pem,client.key,client.pem,也可以修改自己对应的名称
+证书名称为 ca.pem,client.key,client.pem,也可以修改自己对应的名称
+:::
 
 ```bash
 cd /usr/yunji/cloudiac/
@@ -101,13 +103,14 @@ EOF
 
 > 配置说明
 
-!!! Caution
-    `docker-compose.yaml` 中 **consul** 新增以下配置，其他配置可根据需要修改
+:::note
+`docker-compose.yaml` 中 **consul** 新增以下配置，其他配置可根据需要修改
 
-    - CONSUL_HTTP_SSL_VERIFY=false: 私有化部署SSL证书不验证
-    - CONSUL_HTTP_SSL=true: 启动https URI方案和http api的SSl连接
-    - -config-dir=/consul/config: 容器启动Command新增挂载指定配置目录
-    - /usr/yunji/cloudiac:/consul/config:新增挂载目录 
+- CONSUL_HTTP_SSL_VERIFY=false: 私有化部署SSL证书不验证
+- CONSUL_HTTP_SSL=true: 启动https URI方案和http api的SSl连接
+- -config-dir=/consul/config: 容器启动Command新增挂载指定配置目录
+- /usr/yunji/cloudiac:/consul/config:新增挂载目录 
+:::
 
 修改完成后执行以下命令，重启 consul 使配置生效:
 
@@ -138,18 +141,20 @@ acl = {
 }
 EOF
 ```
-!!! Info
-    consul acl bootstrap执行结果如下,SecretID为所需要的token
-    ```bash
-    # consul acl bootstrap
-    AccessorID:       af48d2cf-690d-eafe-5e5a-40e3239efa9e
-    SecretID:         a0419d88-cd14-f96f-e144-a02a0f03f683
-    Description:      Bootstrap Token (Global Management)
-    Local:            false
-    Create Time:      2022-04-14 09:00:05.914372 +0000 UTC
-    Policies:
-    00000000-0000-0000-0000-000000000001 - global-management
-    ```
+
+:::tip
+consul acl bootstrap执行结果如下,SecretID为所需要的token
+```bash
+# consul acl bootstrap
+AccessorID:       af48d2cf-690d-eafe-5e5a-40e3239efa9e
+SecretID:         a0419d88-cd14-f96f-e144-a02a0f03f683
+Description:      Bootstrap Token (Global Management)
+Local:            false
+Create Time:      2022-04-14 09:00:05.914372 +0000 UTC
+Policies:
+00000000-0000-0000-0000-000000000001 - global-management
+```
+:::
 
 
 ---
@@ -179,18 +184,20 @@ acl = {
 }
 EOF
 ```
-!!! Info
-    consul acl bootstrap执行结果如下,SecretID为所需要的token
-    ```bash
-    # consul acl bootstrap
-    AccessorID:       af48d2cf-690d-eafe-5e5a-40e3239efa9e
-    SecretID:         a0419d88-cd14-f96f-e144-a02a0f03f683
-    Description:      Bootstrap Token (Global Management)
-    Local:            false
-    Create Time:      2022-04-14 09:00:05.914372 +0000 UTC
-    Policies:
-    00000000-0000-0000-0000-000000000001 - global-management
-    ```
+
+:::tip
+consul acl bootstrap执行结果如下,SecretID为所需要的token
+```bash
+# consul acl bootstrap
+AccessorID:       af48d2cf-690d-eafe-5e5a-40e3239efa9e
+SecretID:         a0419d88-cd14-f96f-e144-a02a0f03f683
+Description:      Bootstrap Token (Global Management)
+Local:            false
+Create Time:      2022-04-14 09:00:05.914372 +0000 UTC
+Policies:
+00000000-0000-0000-0000-000000000001 - global-management
+```
+:::
 
 #### consul开启tls
 
@@ -211,11 +218,12 @@ source /etc/profile
 systemctl restart consul
 ```
 
-!!! info
-    环境变量说明
+:::tip
+#### 环境变量说明
 
-    - CONSUL_HTTP_SSL_VERIFY=false: 私有化部署SSL证书不验证
-    - CONSUL_HTTP_SSL=true: 启动https URI方案和http api的SSl连接
+- CONSUL_HTTP_SSL_VERIFY=false: 私有化部署SSL证书不验证
+- CONSUL_HTTP_SSL=true: 启动https URI方案和http api的SSl连接
+:::
 
 
 ## 5. 修改.env配置

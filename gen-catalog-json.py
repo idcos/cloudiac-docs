@@ -49,8 +49,9 @@ mkdocsData = open("mkdocs.yml").read()
 mkdocs = yaml.load(mkdocsData, Loader=yaml.SafeLoader)
 currDir = os.path.basename(os.getcwd())
 rootDir = os.path.join(currDir, mkdocs["docs_dir"])
+rootTitle = mkdocs["site_name"]
 root = {
-  "title": u"产品文档",
+  "title": rootTitle,
   "path": rootDir,
   "children": []
 }

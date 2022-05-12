@@ -31,4 +31,4 @@
 
 ### 选择registry为来源
 
-请参考[使用registry创建策略组](../cases/registry-policygroup)
+请参考[使用registry创建策略组](../registry-policygroup/#_5)

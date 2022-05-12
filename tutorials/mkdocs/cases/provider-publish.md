@@ -29,11 +29,11 @@ $ make build
 
 ### 生成GPG密钥
 
-参考[GPG签名密钥获取](../registry/#_3)
+参考[获取签名密钥](../cases/create-gpg-key.md)
 
 ### 添加GPG密钥到namespace
 
-参考[添加签名密钥](../registry/#_4)
+参考[添加签名密钥](../cases/add-gpg-key.md)
 
 **注意：添加签名密钥时请将签名密钥换成自己的**
 

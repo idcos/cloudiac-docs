@@ -13,7 +13,7 @@
 
 ### 集成vcs
 
-参考[vcs集成](../registry/#vcs_3)
+参考[vcs集成](../cases/create-vcs.md)
 
 **注意：集成vcs时请使用您自己的vcs仓库**
 

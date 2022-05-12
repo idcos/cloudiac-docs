@@ -54,18 +54,19 @@ nav:
     - "部署环境": quick-start/deploy-env.md
 
   #- "Registry":
-  #  - "Provider 发布": "manual/provider-publish.md"
+  #  - "Provider 发布": "registry/provider-publish.md"
   #  - "Module 发布": "manual/module-publish.md"
   #  - "使用本地发布的 provider": ""
   #  - "合规策略发布": "manual/policy-group-publish.md"
 
-  #- "典型场景": 
+  - "典型场景": 
+    - "使用合规策略限制测试环境的机器规格": "cases/opa-instance-type.md"
+  #  - "接入 LDAP 认证": "cases/ldap.md"
   #  - "创建 aliyun ecs": "cases/aliyun-ecs.md"
   #  - "环境完整创建过程": "cases/all-in-one-example.md"
   #  - "创建合规策略组": ""
   #  - "为云模板开启合规策略": ""
   #  - "为环境开启合规策略": ""
-  #  - "使用合规策略限制测试环境的机器规格": ""
   #  - "使用漂移检测": ""
   #  - "环境创建成功后定时销毁": ""
   #  - "添加部署失败通知": |

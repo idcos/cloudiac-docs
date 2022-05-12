@@ -19,7 +19,3 @@ CloudIaC目前支持以下四种VCS集成：
 - Gitee
 - Gitea
 
-## 添加VCS集成
-
-!!! TODO
-	TODO

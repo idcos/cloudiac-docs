@@ -1,6 +1,24 @@
-# provider发布流程（暂只介绍cloudiac登录方式）
+## Provider 发布
 
-要想使用provider发布流程，则必须先登录且配置了gpg密钥，下面介绍以cloudiac登录实现provider发布的流程：
+### 构建 Provider
+- 以 terraform-provider-http 演示：https://github.com/hashicorp/terraform-provider-http
+- clone 代码
+- 说明开发环境依赖，提示用户安装
+- 编译 Provider
+
+### 打包 Provider
+- 生成 GPG 密钥
+- 将密钥添加到 namespace
+- 打包 zip 文件
+- 生成 SHA256SUMS 文件并签名
+- 打包 docs(可选)
+
+### 发布 Provider
+- 将打包好的 Provider 上传到 http 服务器
+    - 演示使用 scp 进行文件上传，并通过 curl 可以访问文件
+- 在 reigstry 上执行发布
+- 发布后查看 provider 详情及文档
+
 
 1、生成GPG密钥
 

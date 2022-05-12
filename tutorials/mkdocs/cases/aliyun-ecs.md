@@ -19,6 +19,12 @@ CloudIaC 用户可以导入 vcs 仓库下的某个分支从而生成一套云模
 
 ### 实战
 
+#### 创建一个项目
+
+在「组织视图」界面, 选择「项目」选项卡, 点击红框中的创建项目创建一个新项目, 这里我们使用一个新创建好的 aliyun_ecs 作为演示项目;
+
+![CloudIaC 创建项目](../images/aliyun-ecs-add-project.jpg)
+
 #### 设置阿里云资源账号
 
 CloudIaC 需要用户提供阿里云账号的 access_key 与 secret_key;
@@ -162,4 +168,4 @@ CloudIac 支持主流的 vcs 仓库, 为了能让 iac 访问你仓库, 需要先
 等待审批通过后, 远程机器就会被销毁掉;
 ![CloudIaC aliyun-ecs-do-destory](../images/aliyun-ecs-env-do-destory.jpg)
 
-至此, 我们通过 CloudIaC 完成了对一台阿里云 ecs 实例从创建到销毁到全过程!
+至此, 我们通过 CloudIaC 走完了对一台阿里云 ecs 实例从创建到销毁到全过程;

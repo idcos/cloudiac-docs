@@ -3,7 +3,7 @@
 ## 什么是registry
 
 ## 登录方式
-registry目前拟支持两种登录方式，使用cloudiac账号登录或者github账号登录（还未实现），通过不同平台登录的账号相互独立
+registry目前拟支持两种登录方式，使用cloudiac账号登录或者github账号登录，通过不同平台登录的账号相互独立
 
 有关github的介绍，请访问[github介绍](https://github.com/about)
 

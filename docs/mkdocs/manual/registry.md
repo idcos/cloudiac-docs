@@ -51,7 +51,7 @@ Terraform 目前己支持所有主流云商，目前官方以验证的云服务�
 这些云服务的插件在 Terraform 中称为 Provider。
 #### provider发布
 
-请参考[provider发布流程](/markdown/tutorials/mkdocs/cases/provider-publish.md/)
+请参考[provider发布流程](/tutorials/mkdocs/cases/provider-publish.md)
 
 ### module管理
 ### 什么是module
@@ -61,7 +61,7 @@ registry module基于terrafrom module开发，简单来讲module就是包含一�
 
 #### module发布
 
-请参考[modle发布流程](/markdown/tutorials/mkdocs/cases/module-publish.md/)
+请参考[modle发布流程](/tutorials/mkdocs/cases/module-publish.md)
 
 ### 策略组管理
 #### 什么是策略组
@@ -70,4 +70,4 @@ registry module基于terrafrom module开发，简单来讲module就是包含一�
 
 #### 策略组发布
 
-请参考[策略组发布流程](/markdown/tutorials/mkdocs/cases/policy-group-publish.md/)
+请参考[策略组发布流程](/tutorials/mkdocs/cases/policy-group-publish.md)

@@ -10,10 +10,6 @@ CloudIaC 借助 terraform 提供了另一种方案: 通过从 vcs 仓库导入 t
 
 我们接下来演示 CloudIaC 创建阿里云 ecs 再到销毁的全过程;
 
-> ### 前置要求
-> 
-> 假设你已经拥有了一个 CloudIaC 的账号, 并创建或者加入到一个组织中;  
-
 ### 准备工作
 
 为了能够创建一个 aliyun ecs 资源, 我们至少需要以下内容:
@@ -76,7 +72,7 @@ vm_rsa vm_rsa.pub
 ![CloudIac add-ssh-key-details](../images/aliyun-ecs-add-ssh-key-details.jpg)
 
 :::note 密钥说明
-在 CloudIaC 中, ssh 密钥添加后就无法再修改了, 如果你有修改错误的密钥的需求哦, 可以通过删除并重新添加的方式实现;
+在 CloudIaC 中, ssh 密钥添加后就无法再修改了, 如果你有修改错误的密钥的需求, 可以通过删除并重新添加的方式实现;
 :::
 
 #### 导入 VCS acess_token

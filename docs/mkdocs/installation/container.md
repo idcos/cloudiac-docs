@@ -19,8 +19,9 @@ chmod +x /usr/local/bin/docker-compose
 
 ## 3. 创建部署目录
 
-!!! Caution
-    **部署目录必须为 /usr/yunji/cloudiac，部署到其他目录将无法执行环境部署任务。**
+:::important
+**部署目录必须为 /usr/yunji/cloudiac，部署到其他目录将无法执行环境部署任务。**
+:::
 
 ```bash
 mkdir -p /usr/yunji/cloudiac/var/{consul,mysql} && cd /usr/yunji/cloudiac/
@@ -114,8 +115,10 @@ services:
 
 ```
 
-!!! 关于离线部署的说明 Info
-    如果您希望离线部署 cloudiac，则需要手动将上面文件中依赖的 docker 镜像下载到本地。但需要注意，除了上面文件中的镜像外 cloudiac 还需要一个 ct-worker 镜像，正常情况下该镜像会在执行部署任务时自动下载，但在离线部署的情况下该镜像也需要您手动下载到本地。镜像名称为 "cloudiac/ct-worker:vx.y.z"，其中 vx.y.z 为版本 tag，与上面文件中 ct-runner 镜像的版本号保持一致即可。
+:::tip
+#### 关于离线部署的说明
+如果您希望离线部署 cloudiac，则需要手动将上面文件中依赖的 docker 镜像下载到本地。但需要注意，除了上面文件中的镜像外 cloudiac 还需要一个 ct-worker 镜像，正常情况下该镜像会在执行部署任务时自动下载，但在离线部署的情况下该镜像也需要您手动下载到本地。镜像名称为 "cloudiac/ct-worker:vx.y.z"，其中 vx.y.z 为版本 tag，与上面文件中 ct-runner 镜像的版本号保持一致即可。
+:::
 
 ## 5. 创建 .env 文件
 
@@ -199,16 +202,19 @@ RUNNER_SERVICE_TAGS="ct-runner;runner-01"
 RUNNER_OFFLINE_MODE="false"
 ```
 
-!!! 配置说明 Caution
-    `.env` 中以下配置为**必填项**，其他配置可根据需要修改：
+:::note
+配置说明 
+`.env` 中以下配置为**必填项**，其他配置可根据需要修改：
 
-    - IAC_ADMIN_PASSWORD: 初始的平台管理员密码
-    - SECRET_KEY: 数据加密存储时使用的密钥
-    - PORTAL_ADDRESS: 对外地址服务的地址
-    - CONSUL_ADDRESS: consul 服务地址，配置为部署机内网 ip:8500 端口即可
+- IAC_ADMIN_PASSWORD: 初始的平台管理员密码
+- SECRET_KEY: 数据加密存储时使用的密钥
+- PORTAL_ADDRESS: 对外地址服务的地址
+- CONSUL_ADDRESS: consul 服务地址，配置为部署机内网 ip:8500 端口即可
+:::
 
-!!! Info
-    通过 `.env` 可以实现大部分配置的修改，更多配置项可查看 docker 镜像中的 config-portal.yml 和 config-runner.yml 文件，需要修改可以从镜像中拷贝文件，修改后再在容器启动时挂载进行替换。
+:::tip
+通过 `.env` 可以实现大部分配置的修改，更多配置项可查看 docker 镜像中的 config-portal.yml 和 config-runner.yml 文件，需要修改可以从镜像中拷贝文件，修改后再在容器启动时挂载进行替换。
+:::
 
 ## 6. 启动docker-compose
 

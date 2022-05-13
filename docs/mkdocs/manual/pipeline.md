@@ -80,8 +80,9 @@ destroy:
 
 从标准 Pipeline 模板中可以看到，CloudIaC 支持对 plan、apply、destroy 三种任务进行自定义，分别对应环境的 Plan、部署任务、销毁任务。
 
-!!!Info
-    自定义 Pipeline 时可以只对指定的任务类型做定义，未定义的任务类型会使用标准 Pipeline 流程步骤。
+:::tip
+自定义 Pipeline 时可以只对指定的任务类型做定义，未定义的任务类型会使用标准 Pipeline 流程步骤。
+:::
 
 
 每一个任务类型都可以定义各自的步骤列表，CloudIaC 支持的步骤列表如下:
@@ -126,9 +127,10 @@ apply:
         - "curl -d token=${WORKFLOW_TOKEN} https://workflow.example.com/step/${WORKFLOW_STEPID}/start"
 ```
 
-!!!Info
-    - 为避免与 yaml 格式特殊字符冲突，args 参数建议使用双引号包含
-    - CloudIaC 的任务步骤都是在容器中执行，不会影响宿主系统
+:::tip
+- 为避免与 yaml 格式特殊字符冲突，args 参数建议使用双引号包含
+- CloudIaC 的任务步骤都是在容器中执行，不会影响宿主系统
+:::
 
 ## Pipeline 回调
 
@@ -157,8 +159,9 @@ apply:
 
 在 command 步骤中可以引用环境变量的值，通过判断变量值来执行不同的操作。如示例中基于环境在任务启动时的状态来判断是创建环境还是恢复失败状态的环境。
 
-!!!Info
-    `CLOUDIAC_ENV_STATUS` 为任务启动时平台自动导出的环境变量，完整的导出环境变量列表见文档: [变量与资源账号](../res-account-variable/)
+:::tip
+`CLOUDIAC_ENV_STATUS` 为任务启动时平台自动导出的环境变量，完整的导出环境变量列表见文档: [变量与资源账号](../res-account-variable/)
+:::
 
 回调步骤总是在流程的最后展示，流程步骤展示效果: 
 ![img.png](../images/pipeline2.png){.img-fluid}

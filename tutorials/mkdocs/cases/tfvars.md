@@ -91,3 +91,5 @@ cidr_block = "10.1.0.0/16"
 
 #### 开发环境01
 ![开发环境部署日志](../images/tfvars-dev-env-profile.jpg)
+
+如上图所示, 我们基于不同的 tfvars 创建出了不同规格的环境资源;

@@ -82,6 +82,18 @@
 
 ### 企业微信通知
 
+创建或者加入企业微信群，在群的设置页面创建接收消息的机器人。
+![企业微信通知](../images/deploy-failed-notification-25.png){.img-fluid}
+
+添加一个机器人用于接收部署失败的消息。
+![企业微信通知](../images/deploy-failed-notification-26.png){.img-fluid}
+
+添加成功之后，生成 webhook url。
+![企业微信通知](../images/deploy-failed-notification-27.png){.img-fluid}
+
+系统中创建企业微信通知时，使用上面的 webhook url。
+![企业微信通知](../images/deploy-failed-notification-28.png){.img-fluid}
+
 ### 钉钉通知
 
 - 钉钉上创建群，并添加一个机器人

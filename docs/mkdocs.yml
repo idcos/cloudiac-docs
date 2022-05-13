@@ -66,8 +66,11 @@ nav:
       - "安全合规": manual/compliance.md
       - "云模板 Pipeline": manual/pipeline.md
       - "通用功能": manual/others.md
-  - "Registry":
-      - "Registry介绍": manual/registry.md
+  - "Registry手册":
+      - "Registry简介": manual/registry.md
+      - "Providers": manual/registry-providers.md
+      - "Modules": manual/registry-modules.md
+      - "策略组": manual/registry-polices.md
   - "部署安装": 
     - "容器部署": installation/container.md
     - "二进制部署": installation/linux.md

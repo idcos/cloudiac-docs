@@ -113,7 +113,7 @@ CloudIac 支持主流的 vcs 仓库, 为了能让 iac 访问你仓库, 需要先
 在「环境变量」一栏中, 我们选择右侧的「添加变量」按钮, 导入阿里云资源账号的 acess_key 和 secre_key;
 本次仅仅创建 ecs, 故只在「额外变量」一栏中引入 ssh 密钥, 并指定代码仓库中的 tfvars 文件;
 
-![CloudIaC add-template-detail02](../images/aliyun-ecs-template-detail02.jpg)
+![CloudIaC add-template-detail02](../images/aliyun-ecs-add-template-detail02.jpg)
 
 
 填写完成后, 选择下一步吗, 进入到「设置」步骤;

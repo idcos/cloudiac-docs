@@ -4,17 +4,24 @@
 
 CloudIaC 可以通过同一套环境部署来部署不同规格类型的环境资源; 通常在云模版中, 我们可以预留多组定义好的 terraform 变量, 在部署环境实例之前, 用户可以临时修改 terraform 变量的参数值来灵活的创建不同规格的环境实例(本次修改仅在本次创建实例时生效);
 在 iac 部署/重新部署环境时, 修改 terraform 变量的值有以下几种方法
+
 #### 1. 环境部署时, 在「高级设置」中选择不同的 tfvars 文件;
+
 ![选择不同的 tfvars 文件](../images/tfvars-advanced-setting.jpg)
 
-#### 2. 环境部署时, 在 terraform 一栏的右下角选择导入变量;
+#### 2. 环境部署时, 在 terraform 一栏的右下角选择「导入变量」;
+
 CloudIaC 会将用户在云模版中定义的所有 terraform 变量展示出来, 提供给用户选择导入;
+
 ![导入 terraform 变量](../images/tfvars-export-vars.jpg)
 
 #### 3. 同时采用以上两种方式
 
+使用 tfvars 管理不同批次的 terraform 变量, 使用「导入变量」来修改某些特定 terraform 变量;
 
-### 案例说明
+
+### 本篇案例说明
+
 本实例主要演示根据 tfvars 的使用, 我们会定义两个不同的 tfvars 文件( ***dev.tfvars*** 和 ***prod.tfvars***，分别用于开发环境和生产环境部署，其中使用的 vpc、实例规格等都不同), 基于同一套云模版, 创建出不同规格的环境实例;  
 
 > 说明: 本次使用阿里云的资源账号, 每个环境创建一台 ecs; 
@@ -36,6 +43,7 @@ $ cd aliun_ecs && tree .
 ```
 
 ### dev.tfvars 内容
+
 ```terraform
 # 开发环境配置
 zone = "cn-beijing-c"
@@ -65,31 +73,38 @@ cidr_block = "10.1.0.0/16"
 ```
 
 ### 创建一个云模板
-基于 aliyn_ecs vcs 创建一个 「app_01_云模板」 的模板
+
+基于 aliyn_ecs vcs 创建一个 「app_01_云模板」 的模板;
+
 ![app_01_云模板](../images/tfvars-template-app01.jpg)
 
-
 ### 分别创建生产、开发两个环境
+
 在同一个项目「aliyn_ecs」下创建两套环境分别叫做生产环境01, 开发环境01;
 
 #### 生成环境01
+
 使用 `prod.tfvars` 作为配置规格;
 
 ![生产环境](../images/tfvars-prod-env.jpg)
 
 
 #### 开发环境01
+
 使用 `dev.tfvars` 作为配置规格;
 
 ![开发环境](../images/tfvars-dev-env.jpg)
 
 ### 基于相同的云模版部署不同的环境
 
+可以从下面两图的 CloudIaC 的环境的资源列表中看到, 两次部署的环境规格实例不相同;
+
 #### 生产环境01
+
 ![生产环境部署日志](../images/tfvars-prod-env-profile.jpg)
 
-
 #### 开发环境01
+
 ![开发环境部署日志](../images/tfvars-dev-env-profile.jpg)
 
-如上图所示, 我们基于不同的 tfvars 创建出了不同规格的环境资源;
+由此我们基于不同的 tfvars 创建出了不同规格的环境资源;

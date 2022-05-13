@@ -64,9 +64,10 @@ nav:
 
   - "典型场景":
     - "创建 aliyun ecs": "cases/aliyun-ecs.md"
-    - "资源创建": "cases/all-in-one-example.md"
-    - "漂移检测": "cases/drift_detection.md"
+    - "本地资源创建": "cases/all-in-one-example.md"
+    - "资源变更检测": "cases/drift_detection.md"
     - "添加SSH密钥": "cases/ssh_key.md"
+    - "一键部署": "cases/shell-deployment.md"
     - "云模板terraform版本选择": "cases/cloud_template.md"
     - "创建策略组": "cases/create-policy-group.md"
     - "为云模板开启合规策略": "cases/template-enable-policy.md"
@@ -82,8 +83,8 @@ nav:
   #  - "环境完整创建过程": "cases/all-in-one-example.md"
   #  - "使用漂移检测": ""
   #      演示各种通知渠道的配置方法，如何获取 token，url 如何填写
-  #  - "通过 tfvars 文件预定义变量": |
-  #      定义 dev.tfvars 和 prod.tfvars，分别用于开发环境和生成环境部署，其中使用的 vpc、实例规格等都不同
+    - "通过 tfvars 文件预定义变量": "cases/tfvars.md"
+      # 定义 dev.tfvars 和 prod.tfvars，分别用于开发环境和生成环境部署，其中使用的 vpc、实例规格等都不同
   #  - "使用 Pipeline 安装 ansible 依赖": |
   #      演示用户的 ansible playbook 中要使用指定的 collection，需要在执行 play 步骤前进行安装
   #      ansible collection 文档：https://docs.ansible.com/ansible/latest/user_guide/collections_using.html

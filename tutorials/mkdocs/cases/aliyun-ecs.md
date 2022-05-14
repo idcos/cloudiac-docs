@@ -6,7 +6,7 @@
 2. 编写程序, 调用阿里云 api 创建;
 3. 使用 Terraform;
 
-CloudIaC 借助 terraform 提供了另一种方案: 通过从 vcs 仓库导入 terraform 代码生成一套云模板, 再使用这套云模版创建资源环境, 用户可以在 CloudIaC 图形界面上以一种交互友好的方式来管理这套环境;
+CloudIaC 借助 terraform 提供了一个交互更加友好的方案: 通过从 vcs 仓库导入 terraform 代码生成一套云模板, 再使用这套云模板创建资源环境, 用户仅需在 CloudIaC 的图形界面上操作就能管理这套环境;
 
 我们接下来演示 CloudIaC 创建阿里云 ecs 再到销毁的全过程;
 
@@ -15,8 +15,8 @@ CloudIaC 借助 terraform 提供了另一种方案: 通过从 vcs 仓库导入 t
 为了能够创建一个 aliyun ecs 资源, 我们至少需要以下内容:
 
 - 一个阿里云的资源账号和用于授权的 acesss_key、 secret_key;
-- 一个事先准备好 terraform 的 vcs 仓库和用于 CloudIaC 导入使用的访问令牌(access_token);
 - 一对 ssh 密钥, 用于登录 ecs 实例使用;
+- 一个事先准备好 terraform 的 vcs 仓库和用于 CloudIaC 导入使用的访问令牌(access_token);
 
 ### 实战
 
@@ -24,19 +24,19 @@ CloudIaC 借助 terraform 提供了另一种方案: 通过从 vcs 仓库导入 t
 
 > 如果你已经拥有了一个自己的项目, 可以跳过这一步;
 
-在「组织视图」界面, 选择「项目」选项卡, 点击红框中的创建项目创建一个新项目, 这里我们使用一个新创建好的 aliyun_ecs 作为演示项目;
+在「组织视图」界面, 选择「项目」选项卡, 点击红框中的「创建项目」来新建项目, 这里我们使用一个新创建好的 aliyun_ecs 作为演示项目;
 
 ![CloudIaC 创建项目](../images/aliyun-ecs-add-project.jpg)
 
 #### 设置阿里云资源账号
 
-CloudIaC 需要用户提供阿里云账号的 access_key 与 secret_key;
+CloudIaC 需要用户提供一个阿里云账号的 access_key 与 secret_key;
 
 在「设置」-「资源账号」点击「添加资源账号」按钮添加阿里云资源账号;
 
 ![CloudIaC 资源账号](../images/aliyun-ecs-add-resourc-account.jpg)
 
-点击「添加资源账号」后, 你要输入对应阿里云账号信息, 这里主要是 access_key 与 secrete_key, 需要注意ak/sk变量需要勾选敏感使其不可见;
+点击「添加资源账号」后, 你要输入对应的里云账号信息, 这里主要是 access_key 与 secrete_key, 注意输入 ak/sk 变量后需要勾选敏感使其不可见;
 
 ![CloudIac 添加资源账号](../images/aliyun-ecs-add-resource-account-details.jpg)
 
@@ -97,13 +97,13 @@ CloudIac 支持主流的 vcs 仓库, 为了能让 iac 访问你仓库, 需要先
 以 GitLab 为例, 一个填写好的 VCS 信息应如下所示
 ![CloudIaC add-vcs-done](../images/aliyun-ecs-add-vcs-done.jpg)
 
-#### 导入云模板
-在添加 VCS 完成后, 用户就可以选择自己的代码仓库来导入生成云模版;
+#### 新建云模板
+在添加 VCS 完成后, 用户就可以选择自己的代码仓库来导入分支新建云模板;
 
 在归属的某个组织下, 选择 「云模板」, 点击「新建云模板」按钮;
 ![CloudIaC add-template](../images/aliyun-ecs-add-template.jpg)
 
-在「新建云模版」界面, 进入第一步, 填写必要的 VCS 仓库信息;
+在「新建云模板」界面, 进入第一步, 填写必要的 VCS 仓库信息;
 
 这里我们以一个准备好的 GitLab 仓库 「aliyun-ecs」 为例;
 
@@ -123,7 +123,7 @@ CloudIac 支持主流的 vcs 仓库, 为了能让 iac 访问你仓库, 需要先
 ![CloudIaC add-template-detail02](../images/aliyun-ecs-add-template-detail02.jpg)
 
 填写完成后, 选择下一步, 进入「设置」步骤;  
-在此界面, 我们可以设置此云模板的名字和描述信息, 如下图所示, 我们将本次创建的云模版命名为 aliyun_ecs_demo;  
+在此界面, 我们可以设置此云模板的名字和描述信息, 如下图所示, 我们将本次创建的云模板命名为 aliyun_ecs_demo;  
 
 ![CloudIaC add-template-detail03](../images/aliyun-ecs-add-template-detail03.jpg)
 
@@ -149,7 +149,7 @@ CloudIac 支持主流的 vcs 仓库, 为了能让 iac 访问你仓库, 需要先
 
 ![CloudIaC project-deploy-env](../images/aliyun-ecs-env-deploy.jpg)
 
-在部署之前, 我们将会看到本次部署的环境信息, 新环境默认会继承选中的云模版本身的各种变量(terraform 变量、环境变量、其他变量), 当然你你也可以根据需求修改变量值来创建一个不同规格的环境(本次修改仅本次生效), 我们这里就不修改任何变量;
+在部署之前, 我们将会看到本次部署的环境信息, 新环境默认会继承选中的云模板本身的各种变量(terraform 变量、环境变量、其他变量), 当然你你也可以根据需求修改变量值来创建一个不同规格的环境(本次修改仅本次生效), 我们这里就不修改任何变量;
 
 给这个环境命名为「阿里云ecs实例环境」, 在「执行」选项卡下选择任一个执行通道标签;  
 

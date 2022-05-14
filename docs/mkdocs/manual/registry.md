@@ -1,11 +1,11 @@
-# Registry
+# CloudIaC Registry
 
-## 什么是Registry
+## Registry 简介
+CloudIaC Registry（以下简称 Registry）是 CloudIaC 提供的内容管理仓库， 在 Registry 中提供了大量 Providers、Modules、Polices，用户可以直接浏览并下载使用。
 
-CloudIaC Registry（简称 registry）实现了 terraform provider registry 协议以及 terraform network mirror 协议，用户可以直接配置 network mirror 以代理的方式实现 provider 的缓存和下载，或者发布自己的 Provider 到 CloudIaC Registry，然后在云模板中使用。同时 CloudIaC Registry 也提供 terraform module 和 OPA 合规策略发布服务。
+Registry 实现了 Terraform 的 provider registry 协议以及 network mirror 协议，用户可以直接配置 network mirror 以代理的方式实现 Provider 的缓存和下载，也可以提前在CloudIaC Registry网站上选择要使用的provider进行预下载，从而解决国内 Terraform 用户因为网络原因导致的使用困难问题。
 
-## 登录方式
-Registry目前拟支持两种登录方式，使用cloudiac账号登录或者github账号登录，通过不同平台登录的账号相互独立
+除了缓存 Providers 之外，我们在为客户提供服务的过程中也开发了许多 Providers，同时也沉淀了许多 Modules 和合规策略的最佳实践，这些内容都会一起在 Registry 中进行提供，用户可以根据需要进行下载使用。
 
 有关github的介绍，请访问[github介绍](https://github.com/about)
 

@@ -62,7 +62,7 @@ nav:
     - "vcs集成": cases/create-vcs.md
     - "token获取": cases/token.md
 
-  - "典型场景":
+  - "用户场景":
     - "创建 aliyun ecs": "cases/aliyun-ecs.md"
     - "本地资源创建": "cases/all-in-one-example.md"
     - "资源变更检测": "cases/drift_detection.md"

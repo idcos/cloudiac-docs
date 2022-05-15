@@ -58,20 +58,20 @@ acl = {
   }
 }
 EOF
-```
-:::tip 
 
+```
+:::tip
     consul acl bootstrap执行结果如下,SecretID为所需要的token
-    ```bash
-    # consul acl bootstrap
-    AccessorID:       af48d2cf-690d-eafe-5e5a-40e3239efa9e
-    SecretID:         a0419d88-cd14-f96f-e144-a02a0f03f683
-    Description:      Bootstrap Token (Global Management)
-    Local:            false
-    Create Time:      2022-04-14 09:00:05.914372 +0000 UTC
-    Policies:
-    00000000-0000-0000-0000-000000000001 - global-management
-    ```
+```bash
+# consul acl bootstrap
+AccessorID:       af48d2cf-690d-eafe-5e5a-40e3239efa9e
+SecretID:         a0419d88-cd14-f96f-e144-a02a0f03f683
+Description:      Bootstrap Token (Global Management)
+Local:            false
+Create Time:      2022-04-14 09:00:05.914372 +0000 UTC
+Policies:
+00000000-0000-0000-0000-000000000001 - global-management
+```
 :::
 
 ##### 修改.env配置
@@ -130,16 +130,16 @@ EOF
 ```
 ::: tip
     consul acl bootstrap执行结果如下,SecretID为所需要的token
-    ```bash
-    # consul acl bootstrap
-    AccessorID:       af48d2cf-690d-eafe-5e5a-40e3239efa9e
-    SecretID:         a0419d88-cd14-f96f-e144-a02a0f03f683
-    Description:      Bootstrap Token (Global Management)
-    Local:            false
-    Create Time:      2022-04-14 09:00:05.914372 +0000 UTC
-    Policies:
-    00000000-0000-0000-0000-000000000001 - global-management
-    ```
+```bash
+# consul acl bootstrap
+AccessorID:       af48d2cf-690d-eafe-5e5a-40e3239efa9e
+SecretID:         a0419d88-cd14-f96f-e144-a02a0f03f683
+Description:      Bootstrap Token (Global Management)
+Local:            false
+Create Time:      2022-04-14 09:00:05.914372 +0000 UTC
+Policies:
+00000000-0000-0000-0000-000000000001 - global-management
+```
 :::
 
 ---

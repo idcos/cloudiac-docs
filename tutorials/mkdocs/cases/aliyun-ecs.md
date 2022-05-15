@@ -42,7 +42,7 @@ CloudIaC 需要用户提供一个阿里云账号的 access_key 与 secret_key;
 
 ![CloudIaC 资源账号](../images/aliyun-ecs-add-resourc-account.jpg)
 
-点击「添加资源账号」后, 你要输入对应的里云账号信息, 这里主要是 access_key 与 secrete_key, ***注意输入 ak/sk 变量后需要勾选敏感使其不可见***;
+点击「添加资源账号」后, 你要输入对应的里云账号信息, 这里主要是 access_key 与 secrete_key, ***注意输入 ak/sk 变量后需要勾选敏感使其值隐藏***;
 
 这里展示一下图中已经添加好的资源账号详情
 
@@ -51,7 +51,7 @@ CloudIaC 需要用户提供一个阿里云账号的 access_key 与 secret_key;
 资源账号需要填写的字段值如下
 
 ```bash
-# 不要忘记勾选敏感使其不可变;
+# 不要忘记勾选“敏感”以隐藏变量值
 ALICLOUD_ACCESS_KEY="你的 access_key"
 ALICLOUD_SECRET_KEY="你的 secret_key"
 ```
@@ -187,7 +187,7 @@ CloudIac 支持主流的 vcs 仓库, 为了能让 iac 访问你仓库, 需要先
 ##### plan 计划与执行部署
 
 在「环境信息」页面最下方有两个按钮:「plan 计划」与「执行部署」;  
-二者的作用与 terraform 的 plan 和 apply 命令是一致的,「plan 计划」只会展示本次环境将要变更的资源数据但不执行创建, 而「执行部署」会先展示变更的资源, 等审批通过后再执行部署;  
+二者分别对应 terraform 的 plan 和 apply 操作,「plan 计划」只会展示本次环境将要变更的资源数据但不执行创建, 而「执行部署」会先展示变更的资源, 等审批通过后再执行部署;  
 
 ![CloudIaC project-deploy-env-var](../images/aliyun-ecs-deploy-or-plan.jpg)
 
@@ -214,11 +214,11 @@ CloudIac 支持主流的 vcs 仓库, 为了能让 iac 访问你仓库, 需要先
 
 ![CloudIaC aliyun-ecs-destory](../images/aliyun-ecs-env-destory.jpg)
 
-「销毁资源」是一个高危操作, 再销毁前, IaC 会要求用户输入一次环境的名称来确认用户是否真的要销毁环境;
+「销毁资源」是一个高危操作, 在销毁前, IaC 会要求用户输入一次环境的名称来确认用户是否真的要销毁环境;
 
 ![CloudIaC aliyun-ecs-destory-check](../images/aliyun-ecs-env-destory-check.jpg)
 
-在确认销毁后, 同样也会有一个类似部署前的审核过程, 再通过后稍事一会, 远程的阿里云 ecs 实例就会被真正的回收销毁掉; 
+在确认销毁后, 同样也会有一个类似部署前的审核过程, 审核通过后会执行销毁动作，稍后创建的阿里云 ecs 实例资源就会被回收销毁；
 
 ![CloudIaC aliyun-ecs-do-destory](../images/aliyun-ecs-env-do-destory.jpg)
 

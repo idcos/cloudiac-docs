@@ -68,7 +68,8 @@ nav:
       - "通用功能": manual/others.md
   - "Registry":
       - "Registry介绍": manual/registry.md
-  - "部署安装": 
+  - "部署安装":
+    - "一键部署cloudiac": installation/shell-deployment.md
     - "容器部署": installation/container.md
     - "二进制部署": installation/linux.md
     - "Consul开启acl和tls": installation/consul.md

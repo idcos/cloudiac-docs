@@ -70,3 +70,60 @@
 
 - Slack 通知
   ![Slack通知](../images/deploy-failed-notification-14.png){.img-fluid}
+
+## 补充：各类通知接收方式的配置
+
+### 邮件通知
+
+邮件通知的邮箱和和系统中账户的邮箱一致，选择邮件通知对象时，选择需要通知的账户即可。
+
+左边红框是待选的账户，右边红框是已经选择接收通知的账户。
+![邮件通知](../images/deploy-failed-notification-15.png){.img-fluid}
+
+### 企业微信通知
+
+创建或者加入企业微信群，在群的设置页面创建接收消息的机器人。
+![企业微信通知](../images/deploy-failed-notification-25.png){.img-fluid}
+
+添加一个机器人用于接收部署失败的消息。
+![企业微信通知](../images/deploy-failed-notification-26.png){.img-fluid}
+
+添加成功之后，生成 webhook url。
+![企业微信通知](../images/deploy-failed-notification-27.png){.img-fluid}
+
+系统中创建企业微信通知时，使用上面的 webhook url。
+![企业微信通知](../images/deploy-failed-notification-28.png){.img-fluid}
+
+### 钉钉通知
+
+- 钉钉上创建群，并添加一个机器人
+  ![钉钉通知](../images/deploy-failed-notification-16.png){.img-fluid}
+
+- 创建钉钉机器人
+  创建机器人按照钉钉提示的步骤一步步填写即可，需要注意的地方有：
+
+  1. 机器人类型选择【自定义】机器人
+     ![钉钉通知](../images/deploy-failed-notification-17.png){.img-fluid}
+  2. 安全设置选择【加签】，并将生成的密钥保存下来
+     ![钉钉通知](../images/deploy-failed-notification-18.png){.img-fluid}
+  3. 最后生成的 webhook url 要保存下来
+     ![钉钉通知](../images/deploy-failed-notification-19.png){.img-fluid}
+
+创建钉钉通知时，将上面的生成的 密钥 和 webhook url 填入下面的对应位置。
+![钉钉通知](../images/deploy-failed-notification-20.png){.img-fluid}
+
+### Slack 通知
+
+首先在 slack 官网上注册账户，并创建一个频道。
+
+然后在频道中配置通知。
+![Slack 通知](../images/deploy-failed-notification-21.png){.img-fluid}
+
+应用选择【Incoming WebHook】类型，然后添加到接收消息的频道即可。
+![Slack 通知](../images/deploy-failed-notification-22.png){.img-fluid}
+
+添加成功之后，会生成一个 webhook url。
+![Slack 通知](../images/deploy-failed-notification-23.png){.img-fluid}
+
+将此 url 配置到系统中用来接收通知。
+![Slack 通知](../images/deploy-failed-notification-24.png){.img-fluid}

@@ -63,21 +63,6 @@ nav:
     - "产品构架": intro/product-architecture.md
 
   - "产品手册":
-<<<<<<< HEAD
-      - "组织/项目/角色": manual/org-project-role.md
-      - "VCS 管理": manual/vcs.md
-      - "云模板管理": manual/templates.md
-      - "变量与资源账号": manual/res-account-variable.md
-      - "环境管理": manual/env.md
-      - "环境高级功能": manual/env-advanced.md
-      - "安全合规": manual/compliance.md
-      - "云模板 Pipeline": manual/pipeline.md
-      - "通用功能": manual/others.md
-  - "Registry":
-      - "Registry介绍": manual/registry.md
-  - "部署安装":
-    - "一键部署cloudiac": installation/shell-deployment.md
-=======
     - "组织/项目/角色": manual/org-project-role.md
     - "VCS 管理": manual/vcs.md
     - "云模板管理": manual/templates.md
@@ -117,7 +102,7 @@ nav:
     - "通过 tfvars 文件预定义变量": "cases/tfvars.md"
 
 
-  - "部署安装": 
+  - "部署安装":
     - "容器部署": installation/container.md
     - "二进制部署": installation/linux.md
     - "一键部署": installation/shell-deployment.md
@@ -130,4 +115,3 @@ nav:
 #    - "API简介": api-docs/index.md
 #  - "常见问题":
 #    - "常见问题": answer-questions/index.md
-

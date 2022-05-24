@@ -51,16 +51,16 @@ markdown_extensions:
           format: "!!python/name:mermaid2.fence_mermaid"
 
 nav:
+  - "快速入门":
+    - "创建组织和项目": quick-start/create-org-project.md
+    - "创建云模板": quick-start/create-template.md
+    - "部署环境": quick-start/deploy-env.md
+
   - "产品介绍":
     - "产品概述": index.md
     - "功能特性": intro/product-features.md
     - "产品优势": intro/product-advantage.md
     - "产品构架": intro/product-architecture.md
-
-  - "快速入门":
-    - "创建组织和项目": quick-start/create-org-project.md
-    - "创建云模板": quick-start/create-template.md
-    - "部署环境": quick-start/deploy-env.md
 
   - "产品手册":
     - "组织/项目/角色": manual/org-project-role.md
@@ -72,8 +72,9 @@ nav:
     - "安全合规": manual/compliance.md
     - "云模板 Pipeline": manual/pipeline.md
     - "通用功能": manual/others.md
+    - "Token 获取": manual/vcs-token.md
 
-  - "Registry手册":
+  - "Registry 手册":
     - "Registry简介": manual/registry.md
     - "Providers": manual/registry-providers.md
     - "Modules": manual/registry-modules.md
@@ -84,7 +85,6 @@ nav:
     - "获取签名密钥": cases/create-gpg-key.md
     - "添加签名密钥": cases/add-gpg-key.md
     - "vcs集成": cases/create-vcs.md
-    - "token获取": cases/token.md
 
   - "用户场景":
     - "创建 aliyun ecs": "cases/aliyun-ecs.md"

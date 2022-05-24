@@ -1,4 +1,4 @@
-# token获取
+# VCS Token 获取
 ## gitlab
 访问 gitlab，并输入账号密码进行登录（ gitlab 为内网系统，账号密码需管理员分发）
 

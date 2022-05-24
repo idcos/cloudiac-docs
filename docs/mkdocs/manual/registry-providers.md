@@ -45,7 +45,7 @@ provider_installation {
 ```
 
 ## 发布自定义 Provider
-对于自己开发的 Provider，可以发布到 Registry，具体发布方法参见教程：[Provider发布](/tutorials/mkdocs/cases/provider-publish.md)
+对于自己开发的 Provider，可以发布到 Registry，具体发布方法参见教程：[Provider发布](../cases/provider-publish.md)
 
 ## 如何使用自定义发布的 Provider
 在 Registry 详情页，打开右上角使用指南，即可看到该 Provider 的引用方法

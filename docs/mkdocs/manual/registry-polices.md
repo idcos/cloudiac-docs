@@ -18,4 +18,5 @@ Policy 就是一条使用 Rego 编写的策略，用于 CloudIaC 环境及云模
 CloudIaC Registry 中，我们对多个云平台提供了大量常用的合规策略，用户可以根据需要执行使用，也可以以此为基础来编写适合自己的合规策略。
 
 ## 发布策略组
-对于自定义的合规策略，可以发布到 Registry，具体发布方法参见教程：[策略组发布](/tutorials/mkdocs/cases/policy-group-publish.md)
+对于自定义的合规策略，可以发布到 Registry，具体发布方法参见教程：[策略组发布](../cases/policy-group-publish.md)
+

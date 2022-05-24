@@ -10,4 +10,4 @@ CloudIaC Registry 上提供了大量常用的云平台资源抽象的 Module，�
 ![img.png](../images/modules-usage.png)
 
 ## 发布自定义 Module
-对于自己开发的 Moudle，可以发布到 Registry，具体发布方法参见教程：[Module发布](/tutorials/mkdocs/cases/module-publish.md)
+对于自己开发的 Moudle，可以发布到 Registry，具体发布方法参见教程：[Module发布](../cases/module-publish.md)

@@ -19,4 +19,4 @@ tips：如果选择 GitHub 或者 gitee，则地址为默认地址即可，不�
 
 如果选择 GitLab 或者 gitea，因为是内网系统，则需要输入对应的内网网址
 
-Token 为对应 vcs 平台的私人令牌，各平台 Token 的获取请参考[token获取](../quick-start/token.md)
+Token 为对应 vcs 平台的私人令牌，各平台 Token 的获取请参考[token获取](../manual/vcs-token.md)

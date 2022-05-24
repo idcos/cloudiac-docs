@@ -10,7 +10,7 @@ mkdir -p /usr/yunji/cloudiac/var/{consul,mysql} && cd /usr/yunji/cloudiac/
 # 第二步生成docker-compose.yml文件
 echo
 echo "Generate docker-compose.yml file #########################"
-read  -p "Please enter the version to be installed---default [v0.9.4]：" version
+read  -p "Please enter the version to be installed---default [v0.9.4]：" version </dev/tty
 if [ -z "${version}" ];then
   version=v0.9.4
 fi
@@ -101,26 +101,26 @@ EOF
 echo
 echo "Generate .evn configuration file #########################"
 echo
-read  -p "Please enter a system administrator account name, the default is [admin@example.com]:" admin
+read  -p "Please enter a system administrator account name, the default is [admin@example.com]:" admin </dev/tty
 if [ -z "${admin}" ];then
   admin=admin@example.com
 fi
 echo
-read  -p "Please enter the platform administrator password, the default is [admin123]:" password
+read  -p "Please enter the platform administrator password, the default is [admin123]:" password </dev/tty
 
 if [ -z "${password}" ];then
   password=admin123
 fi
 
 echo
-read  -p "Encryption key configuration, the default is [admin]:" secret_key
+read  -p "Encryption key configuration, the default is [admin]:" secret_key </dev/tty
 
 if [ -z "${secret_key}" ];then
   secret_key=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 6)
 fi
 
 echo
-read  -p "Please enter the database password, the default is [password]:" mysql_psword
+read  -p "Please enter the database password, the default is [password]:" mysql_psword </dev/tty
 
 if [ -z "${mysql_psword}" ];then
   mysql_psword=password
@@ -128,7 +128,7 @@ fi
 
 
 echo
-read -p "Add mirror address, the default is [docker hub]:  " registry_address
+read -p "Add mirror address, the default is [docker hub]:  " registry_address </dev/tty
 
 if [ -z "${registry_address}" ];then
   registry_address=""

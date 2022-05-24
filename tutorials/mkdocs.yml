@@ -47,6 +47,7 @@ markdown_extensions:
           class: mermaid
           format: "!!python/name:mermaid2.fence_mermaid"
 
+<<<<<<< HEAD
 nav:
   - "快速入门":
       - "创建组织和项目": quick-start/create-org-project.md
@@ -95,3 +96,6 @@ nav:
   #      创建 ansible host group，并给主机组添加变量，然后演示在 playbook 中使用主机组及其变量
   #  - "通过环境变量开启 terraform 和 ansible 日志": "TF_LOG=debug, ANSIBLE_VERBOSITY=2"
   #  - "自定义 runner 镜像": ""
+=======
+nav: {}
+>>>>>>> e8b19385f5c89e75c5a3120544c5645823fe55ef

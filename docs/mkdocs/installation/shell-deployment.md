@@ -5,6 +5,8 @@
 ## docker环境一键部署
 :::note
 支持操作系统:centos,Ubuntu
+
+服务器最低配置: 1核2g
 docker环境一键部署,需要您安装了docker环境同时支持docker-compose部署
 :::
 

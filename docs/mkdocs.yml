@@ -102,7 +102,7 @@ nav:
     - "通过 tfvars 文件预定义变量": "cases/tfvars.md"
 
 
-  - "部署安装": 
+  - "部署安装":
     - "容器部署": installation/container.md
     - "二进制部署": installation/linux.md
     - "一键部署": installation/shell-deployment.md
@@ -115,4 +115,3 @@ nav:
 #    - "API简介": api-docs/index.md
 #  - "常见问题":
 #    - "常见问题": answer-questions/index.md
-

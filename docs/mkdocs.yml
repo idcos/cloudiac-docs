@@ -72,6 +72,7 @@ nav:
     - "环境高级功能": manual/env-advanced.md
     - "安全合规": manual/compliance.md
     - "云模板 Pipeline": manual/pipeline.md
+    - "费用预估和统计": manual/env-cost.md
     - "通用功能": manual/others.md
     - "Token 获取": manual/vcs-token.md
 

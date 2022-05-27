@@ -8,12 +8,13 @@
 ![picture 22](../images/158f8b95234b02896d2e6b8719760ed4c1e5d7136b60353be1504d0b1272f419.png){.img-fluid}
 #### 环境设置
 在环境部署页面中，可能定义环境名称，选择使用的云模板仓库分支/标签（默认的分支/标签直接使用云模板中配置的值。
+设置环境工作的目录
 
 展开 Terraform 变量会发现自动继承了在云模板中设置的变量值 number：
-![picture 24](../images/b6c0646ef215b38d4744252cfe2fd2b94f9147e433c78d23be403b90c134aa32.png){.img-fluid}
+![picture 24](../images/img-202205271129.png){.img-fluid}
 
 展开高级设置可以对环境进行更多的配置:
-![picture 25](../images/d1e196ae4360af4e86daad4dd58149dd4800ec7db1cb0d7692d6ccf2255a1cc9.png){.img-fluid}
+![picture 25](../images/img-202205271128.png){.img-fluid}
 
 
 环境部署时的详细配置项可以查看 [环境管理](../../manual/env/)，我们这里不做额外配置，直接点击“执行部署”按钮发起环境部署。

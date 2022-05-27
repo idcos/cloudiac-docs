@@ -64,6 +64,7 @@ nav:
 
   - "产品手册":
     - "组织/项目/角色": manual/org-project-role.md
+    - "组织/项目概览": manual/org-project-overview.md
     - "VCS 管理": manual/vcs.md
     - "云模板管理": manual/templates.md
     - "变量与资源账号": manual/res-account-variable.md
@@ -107,6 +108,7 @@ nav:
     - "二进制部署": installation/linux.md
     - "一键部署": installation/shell-deployment.md
     - "Consul开启acl和tls": installation/consul.md
+    - "Consul高可用部署": installation/consul-cluster.md
 
   - "Releases": releases.md
   - "视频介绍": https://space.bilibili.com/2138433328/channel/seriesdetail?sid=1908688

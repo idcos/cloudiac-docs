@@ -56,3 +56,4 @@ cloudiac 不生成密钥，只支持添加己生成的 ssh 私钥。私钥可以
 
 在系统设置中可以进行组织的管理，系统参数配置，及 Registry 配置。
 
+在 registry 配置中可以指定 registry 地址，指定后在创建策略组时就可以选择基于该 registry 中已发布的策略组创建，同时执行部署任务时也会自动启用该 registry 做为 terraform network mirror。

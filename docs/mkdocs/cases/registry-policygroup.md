@@ -1,4 +1,5 @@
 # Regitstry 中的策略组使用
+在 CloudIaC Registry 中，提供了大量开箱即用的合规策略，您可以根据自己的需要选择合适的策略组进行导入使用。
 
 ## 配置 Registry 地址
 

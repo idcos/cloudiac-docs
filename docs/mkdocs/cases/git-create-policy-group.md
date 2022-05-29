@@ -1,18 +1,18 @@
-# 通过 Git 仓库创建策略组
+# 使用自定义合规策略
 
 ## 场景描述
 
-在使用 cloudiac 中的策略组功能时，如果内置的策略组或者 registry 中的策略组不满足您的需求，您可自行编写合规策略，并上传到自己的代码仓库中，即可在 cloudiac 中使用您仓库中的合规策略
+在使用 cloudiac 中的策略组功能时，如果内置的策略组或者 registry 中的策略组不满足您的需求，您可自行编写合规策略，并上传到代码仓库中，即可在 cloudiac 中使用您仓库中的合规策略
 
 ## 场景示例
 
-使用示例仓库创建一个策略组作为示例说明：
+在 CloudIaC 中，集成了 OPA 引擎，使用 Rego（声明式语言）来定义策略规则，一条合规策略对应一个 rego 文件，若干个 rego 文件组成一个策略组；
 
-**仓库由若干个合规策略文件和配置文件组成**
+跟云模板一样，我们通过 VCS 来管理策略组，一个策略组对应一个代码仓库，该仓库下的若干 rego 文件即代表若干条合规策略。
 
 ![img](../images/git-create-policy-group1.png)
 
-有关合规策略，请参考[安全合规](/docs/mkdocs/manual/compliance.md)
+有关合规策略的具体编写方法，请参考[Policy Language](https://www.openpolicyagent.org/docs/latest/policy-language/)
 
 ### 创建策略组
 

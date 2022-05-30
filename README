@@ -1,12 +1,8 @@
 Cloudiac Docs
 ==============
-## 启动本地开发服务器
+## 构建 
 ```
-cd docs && mkdocs serve
-```
-
-## 构建 docs.json
-```
-cd docs && ../gen-docs-json.py > docs.json
+pip3 install -r requirements.txt
+bash build.sh
 ```
 

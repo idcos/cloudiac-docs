@@ -27,8 +27,8 @@ version: 0.4
 plan:
   # 任务步骤列表
   steps:
-    - type: checkout        # 步骤类型
-      name: Checkout Code   # 步骤的展示名称，未提供名称则展示为步骤类型
+    - type: checkout # 步骤类型
+      name: Checkout Code # 步骤的展示名称，未提供名称则展示为步骤类型
 
     - type: terraformInit
       name: Terraform Init
@@ -84,19 +84,18 @@ destroy:
 自定义 Pipeline 时可以只对指定的任务类型做定义，未定义的任务类型会使用标准 Pipeline 流程步骤。
 :::
 
-
 每一个任务类型都可以定义各自的步骤列表，CloudIaC 支持的步骤列表如下:
 
-| 步骤类型         | 说明                      |
-| ---------------- | ------------------------- |
-| checkout         | 代码检出                  |
-| terraformInit    | terraform init            |
-| terraformPlan    | terraform plan            |
-| terraformApply   | terraform apply           |
-| terraformDestroy | terraform destroy         |
-| ansiblePlay      | ansible-playbook          |
-| envScan          | OPA 策略扫描               |
-| command          | 执行自定义命令              |
+| 步骤类型         | 说明              |
+| ---------------- | ----------------- |
+| checkout         | 代码检出          |
+| terraformInit    | terraform init    |
+| terraformPlan    | terraform plan    |
+| terraformApply   | terraform apply   |
+| terraformDestroy | terraform destroy |
+| ansiblePlay      | ansible-playbook  |
+| envScan          | OPA 策略扫描      |
+| command          | 执行自定义命令    |
 
 同时步骤还支持 args 参数，terraform 和 ansible 相关步骤类型的 args 会以命令行参数的形式传递给执行的命令，如 terraformPlan 步骤传入 "-destroy" 参数用于生成 terraform destroy，command 步骤的 args 参数表示需要执行的 shell 命令。
 
@@ -111,26 +110,27 @@ apply:
   steps:
     - name: Instal amazon.aws
       type: command
-      args: 
+      args:
         - yum install -y python2-pip
         - pip install botocore==1.21.41 boto3==1.18.41
         - ansible-galaxy collection install amazon.aws
 
     - name: Download alicloud provider
       type: command
-      args: 
+      args:
         - "curl -Ls https://github.com/aliyun/terraform-provider-alicloud/releases/download/v1.126.0/terraform-provider-alicloud_1.126.0_linux_amd64.zip >/usr/share/terraform/plugins/registry.terraform.io/aliyun/alicloud/terraform-provider-alicloud_1.126.0_linux_amd64.zip"
 
     - name: Trigger workflow
       type: command
-      args: 
+      args:
         - "curl -d token=${WORKFLOW_TOKEN} https://workflow.example.com/step/${WORKFLOW_STEPID}/start"
 ```
 
 :::tip
+
 - 为避免与 yaml 格式特殊字符冲突，args 参数建议使用双引号包含
 - CloudIaC 的任务步骤都是在容器中执行，不会影响宿主系统
-:::
+  :::
 
 ## Pipeline 回调
 
@@ -143,7 +143,7 @@ apply:
   onSuccess:
     name: 任务成功
     type: command
-    args: 
+    args:
       - echo "Task successful"
       - test "$CLOUDIAC_ENV_STATUS" = "inactive" && echo "Environment created"
       - test "$CLOUDIAC_ENV_STATUS" = "failed" && echo "Environment recovered"
@@ -151,7 +151,7 @@ apply:
   onFail:
     name: 任务失败
     type: command
-    args: 
+    args:
       - echo "Task failed"
 
   steps: [] # 流程步骤省略
@@ -163,7 +163,7 @@ apply:
 `CLOUDIAC_ENV_STATUS` 为任务启动时平台自动导出的环境变量，完整的导出环境变量列表见文档: [变量与资源账号](../res-account-variable/)
 :::
 
-回调步骤总是在流程的最后展示，流程步骤展示效果: 
+回调步骤总是在流程的最后展示，流程步骤展示效果:
 ![img.png](../images/pipeline2.png){.img-fluid}
 
 ## 完整的自定义 Pipeline 示例
@@ -171,11 +171,11 @@ apply:
 一个完整的自定义 pipeline 示例：
 
 ```yaml
---- 
+---
 version: 0.4
 
 plan:
-  steps: 
+  steps:
     - type: checkout
       name: "Checkout code"
 
@@ -188,22 +188,21 @@ plan:
     - type: terraformPlan
       name: "Terraform Plan"
 
-
-apply: 
-  onFail: 
+apply:
+  onFail:
     type: command
-    args: 
+    args:
       - echo "Job failed"
 
-  onSuccess: 
+  onSuccess:
     type: command
-    args: 
+    args:
       - echo "Job successful"
 
-  steps: 
+  steps:
     - type: command
-      args: 
-        - "echo \"get somethings\""
+      args:
+        - 'echo "get somethings"'
         - "bash script.sh"
         - "curl 127.0.0.1/api/action"
 
@@ -225,9 +224,8 @@ apply:
     - type: ansiblePlay
       name: "Run playbook"
 
-
-destroy: 
-  steps: 
+destroy:
+  steps:
     - type: checkout
       name: "Checkout code"
 
@@ -236,7 +234,7 @@ destroy:
 
     - type: terraformPlan
       name: "Terraform Plan"
-      args: 
+      args:
         - "-destroy"
 
     - type: terraformDestroy
@@ -244,6 +242,152 @@ destroy:
 
     - type: command
       name: "Say Bye"
-      args: 
+      args:
         - echo "Bye!"
 ```
+
+## pipeline 0.5 版本
+
+0.5 版除了增加了一些配置项之外，强化了默认动作补全，极大简化了 pipeline 的配置工作量。
+
+### 0.5 版本主要变化
+
+1. 配置方式变化，steps 下每个步骤都是独立的结构，不再是列表
+2. 每个 step 可以配置 before（前处理） 和 after（后处理）
+3. 每个 step 可以配置超时时间，单位秒
+4. plan/apply/destroy 中的 steps 中的每个步骤顺序固定，如果缺失则补全
+5. destroy 的 steps 中， terraformPlan 步骤的 args 默认包含 "-destroy"
+
+### 0.5 版本的完整版本示例
+
+```yaml
+version: 0.5
+
+plan:
+  onFail:
+    args:
+      - echo "plan failed."
+  onSuccess:
+    args:
+      - echo "plan successed."
+
+  steps:
+    checkout:
+      name: Checkout Code
+      timeout: 30
+      before:
+        - echo "before checkout"
+      after:
+        - echo "after checkout"
+
+    terraformInit:
+      name: Terraform Init
+      timeout: 30
+      before:
+        - echo "before terraform init"
+      after:
+        - echo "after terraform init"
+
+    opaScan:
+      name: OPA Scan
+
+    terraformPlan:
+      name: Terraform Plan
+      before:
+        - echo "before terraform plan"
+      after:
+        - echo "after terraform plan"
+
+apply:
+  onFail:
+    args:
+      - echo "apply failed."
+  onSuccess:
+    args:
+      - echo "apply successed."
+
+  steps:
+    checkout:
+      name: Checkout Code
+
+    terraformInit:
+      name: Terraform Init
+
+    opaScan:
+      name: OPA Scan
+
+    terraformPlan:
+      name: Terraform Plan
+
+    terraformApply:
+      name: Terraform Apply
+
+    ansiblePlay:
+      name: Run playbook
+
+destroy:
+  onFail:
+    args:
+      - echo "destroy failed."
+  onSuccess:
+    args:
+      - echo "destroy successed."
+
+  steps:
+    checkout:
+      name: Checkout Code
+
+    terraformInit:
+      name: Terraform Init
+
+    terraformPlan:
+      name: Terraform Plan
+
+    terraformDestroy:
+      name: Terraform Destroy
+```
+
+apply 和 destroy 中的 steps 也是可以配置 before/after/timeout，为了简化显示只在 plan 中的 steps 中配置了 before/after/timeout。
+
+### 0.5 版本的简化版本示例
+
+0.5 版本的 pipeline 有默认会对 steps 进行补全。
+所以，如果没有 before/after/timeout 等额外的操作，可以不用具体配置 steps，系统会自动补全缺失的 step。
+
+```yaml
+version: 0.5
+
+plan:
+  onFail:
+    args:
+      - echo "plan failed."
+  onSuccess:
+    args:
+      - echo "plan successed."
+
+  steps:
+    checkout:
+      name: Checkout Code
+      timeout: 30
+      before:
+        - echo "before checkout"
+      after:
+        - echo "after checkout"
+
+    terraformPlan:
+      name: Terraform Plan
+      before:
+        - echo "before terraform plan"
+      after:
+        - echo "after terraform plan"
+
+apply:
+
+destroy:
+```
+
+plan 任务中，因为 checkout/terraformPlan 有 before/after 之类的操作，所以显式配置。
+虽然 terraformInit 步骤没有配置，实际执行时，系统会自动补充此步骤。
+
+对于 apply/destroy 任务，没有 before/after/timeout 之类的特殊配置，
+所以 steps 不用配置，系统会自动补全缺失的步骤。

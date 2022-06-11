@@ -10,9 +10,9 @@ mkdir -p /usr/yunji/cloudiac/var/{consul,mysql} && cd /usr/yunji/cloudiac/
 # 第二步生成docker-compose.yml文件
 echo
 echo "Generate docker-compose.yml file #########################"
-read  -p "Please enter the version to be installed---default [v0.9.4]：" version </dev/tty
+read  -p "Please enter the version to be installed---default [v0.11.0]：" version </dev/tty
 if [ -z "${version}" ];then
-  version=v0.9.4
+  version=v0.11.0
 fi
 
 cat > /usr/yunji/cloudiac/docker-compose.yml << EOF

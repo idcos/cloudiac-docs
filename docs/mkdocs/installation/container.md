@@ -221,7 +221,7 @@ RUNNER_OFFLINE_MODE="false"
 ```bash
 docker-compose up
 ```
-> 默认为前台启动，以便于排查问题，在确定服务正常后可以改为后台启动：`dokcker-compose up -d`。
+> 默认为前台启动，以便于排查问题，在确定服务正常后可以改为后台启动：`docker-compose up -d`。
 
 ---
 

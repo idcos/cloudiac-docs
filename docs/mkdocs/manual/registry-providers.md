@@ -32,14 +32,12 @@ provider_installation {
         // 提供 network mirror 服务的地址
         url = "https://registry.cloudiac.org/v1/mirrors/providers/"
         // hostname 为 registry.cloudiac.org 的 provider 查询不走 mirror
-        exclude = ["registry.cloudiac.org/*/*"]
+        include = ["registry.terraform.io/*/*"]
     }
 
     direct {
         // hostname 为 registry.cloudiac.org 的 provider 可以直接下载 
         include = ["registry.cloudiac.org/*/*"]
-        // 其他 hostname 下的 provider 只能走 network mirror 
-        exclude = ["*/*/*"]
     }
 }
 ```

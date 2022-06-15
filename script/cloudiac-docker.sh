@@ -109,21 +109,21 @@ echo
 read  -p "Please enter the platform administrator password, the default is [admin123]:" password </dev/tty
 
 if [ -z "${password}" ];then
-  password=admin123
+  password=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 6)
 fi
 
 echo
 read  -p "Encryption key configuration, the default is [admin]:" secret_key </dev/tty
 
 if [ -z "${secret_key}" ];then
-  secret_key=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 6)
+  secret_key=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 12)
 fi
 
 echo
 read  -p "Please enter the database password, the default is [password]:" mysql_psword </dev/tty
 
 if [ -z "${mysql_psword}" ];then
-  mysql_psword=password
+  mysql_psword=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 6)
 fi
 
 
@@ -187,16 +187,17 @@ echo "create iac environment #########################"
 docker-compose up -d
 echo "Environment created successfully #########################"
 
-#public_ip="$(curl ip.3322.net)"
+
+public_ip=$(curl ip.sb)
 
 echo ""
-echo "The access address is your ip port: [$(curl ip.sb)]"
 echo ""
-
-echo "Your initial installation version is: $version, your system account initialization password is: $admin, your system account initialization password is: $password,
-Your encryption key is: $secret_key, your database initial password is: $mysql_psword"
-
-echo "For more details, please check the official documentation: [https://idcos.github.io/cloudiac/]"
+echo -e "current version: \033[33m $version \033[0m "
+echo -e "manager username:\033[33m $admin \033[0m "
+echo -e "password:\033[33m $password \033[0m "
+echo -e "visit address: \033[32m[$public_ip]\033[0m "
+echo -e "project address: \033[32m https://github.com/idcos/cloudiac\033[0m "
+echo -e "documents: \033[32m https://docs.cloudiac.org \033[0m "
 
 
 

@@ -27,17 +27,16 @@ Registry 实现了 Terraform 的 provider registry 协议以及 network mirror �
 
 ```hcl
 provider_installation {
-    // 配置 network mirror 规则
-    network_mirror {	
-        // 提供 network mirror 服务的地址
-        url = "https://registry.cloudiac.org/v1/mirrors/providers/"
-        // hostname 为 registry.cloudiac.org 的 provider 查询不走 mirror
-        include = ["registry.terraform.io/*/*"]
-    }
-  
-    direct {
-        exclude = ["registry.terraform.io/*/*"]
-      }
+  network_mirror {
+    url = "https://registry.cloudiac.org/v1/mirrors/providers/"
+    // hostname 为 registry.terraform.io 的 provider 走代理
+    include = ["registry.terraform.io/*/*"]
+  }
+
+  direct {
+    // hostname 为 registry.terraform.io 的 provider 避免直接访问
+    exclude = ["registry.terraform.io/*/*"]
+  }
 }
 ```
 

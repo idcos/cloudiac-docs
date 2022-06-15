@@ -34,11 +34,10 @@ provider_installation {
         // hostname 为 registry.cloudiac.org 的 provider 查询不走 mirror
         include = ["registry.terraform.io/*/*"]
     }
-
+  
     direct {
-        // hostname 为 registry.cloudiac.org 的 provider 可以直接下载 
-        include = ["registry.cloudiac.org/*/*"]
-    }
+        exclude = ["registry.terraform.io/*/*"]
+      }
 }
 ```
 

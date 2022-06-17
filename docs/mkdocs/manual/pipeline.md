@@ -15,67 +15,6 @@ CloudIaC 支持 Pipeline 功能，通过 Pipeline 来对环境的 Plan、部署�
 2. 如果工作目录不存在则在代码库根目录下查找 `.cloudiac-pipeline.yml`，存在则使用
 3. 否则使用默认的 Pipeline 标准流程模板
 
-## Pipeline 标准流程模板
-
-Pipeline 使用 yaml 格式定义，标准的流程模板如下:
-
-```yaml
-# pipeline 格式版本号，为了保证多版本的兼容性
-version: 0.4
-
-# plan 任务
-plan:
-  # 任务步骤列表
-  steps:
-    - type: checkout # 步骤类型
-      name: Checkout Code # 步骤的展示名称，未提供名称则展示为步骤类型
-
-    - type: terraformInit
-      name: Terraform Init
-
-    - type: terraformPlan
-      name: Terraform Plan
-
-    - type: envScan
-      name: OPA Scan
-
-apply:
-  steps:
-    - type: checkout
-      name: Checkout Code
-
-    - type: terraformInit
-      name: Terraform Init
-
-    - type: terraformPlan
-      name: Terraform Plan
-
-    - type: envScan
-      name: OPA Scan
-
-    - type: terraformApply
-      name: Terraform Apply
-
-    - type: ansiblePlay
-      name: Run playbook
-
-destroy:
-  steps:
-    - type: checkout
-      name: Checkout Code
-
-    - type: terraformInit
-      name: Terraform Init
-
-    - type: terraformPlan
-      name: Terraform Plan
-      args:
-        - "-destroy"
-
-    - type: terraformDestroy
-      name: Terraform Destroy
-```
-
 ## Pipeline 的任务类型和步骤
 
 从标准 Pipeline 模板中可以看到，CloudIaC 支持对 plan、apply、destroy 三种任务进行自定义，分别对应环境的 Plan、部署任务、销毁任务。
@@ -94,43 +33,11 @@ destroy:
 | terraformApply   | terraform apply   |
 | terraformDestroy | terraform destroy |
 | ansiblePlay      | ansible-playbook  |
-| envScan          | OPA 策略扫描      |
-| command          | 执行自定义命令    |
 
-同时步骤还支持 args 参数，terraform 和 ansible 相关步骤类型的 args 会以命令行参数的形式传递给执行的命令，如 terraformPlan 步骤传入 "-destroy" 参数用于生成 terraform destroy，command 步骤的 args 参数表示需要执行的 shell 命令。
-
-## Command 步骤类型
-
-command 步骤允许您执行任意 shell 命令，基于 command 命令您可以实现功能强大的自定义流程。
-
-一些 command 命令使用场景示例:
-
-```yaml
-apply:
-  steps:
-    - name: Instal amazon.aws
-      type: command
-      args:
-        - yum install -y python2-pip
-        - pip install botocore==1.21.41 boto3==1.18.41
-        - ansible-galaxy collection install amazon.aws
-
-    - name: Download alicloud provider
-      type: command
-      args:
-        - "curl -Ls https://github.com/aliyun/terraform-provider-alicloud/releases/download/v1.126.0/terraform-provider-alicloud_1.126.0_linux_amd64.zip >/usr/share/terraform/plugins/registry.terraform.io/aliyun/alicloud/terraform-provider-alicloud_1.126.0_linux_amd64.zip"
-
-    - name: Trigger workflow
-      type: command
-      args:
-        - "curl -d token=${WORKFLOW_TOKEN} https://workflow.example.com/step/${WORKFLOW_STEPID}/start"
-```
-
-:::tip
-
-- 为避免与 yaml 格式特殊字符冲突，args 参数建议使用双引号包含
-- CloudIaC 的任务步骤都是在容器中执行，不会影响宿主系统
-  :::
+1. 每个 step 可以配置 before（前处理） 和 after（后处理）
+2. 每个 step 可以配置超时时间，单位秒
+3. plan/apply/destroy 中的 steps 中的每个步骤顺序固定，如果缺失则补全
+4. destroy 的 steps 中， terraformPlan 步骤的 args 默认包含 "-destroy"
 
 ## Pipeline 回调
 
@@ -167,98 +74,6 @@ apply:
 ![img.png](../images/pipeline2.png){.img-fluid}
 
 ## 完整的自定义 Pipeline 示例
-
-一个完整的自定义 pipeline 示例：
-
-```yaml
----
-version: 0.4
-
-plan:
-  steps:
-    - type: checkout
-      name: "Checkout code"
-
-    - type: terraformInit
-      name: "Terraform Init"
-
-    - type: envScan
-      name: "OPA Scan"
-
-    - type: terraformPlan
-      name: "Terraform Plan"
-
-apply:
-  onFail:
-    type: command
-    args:
-      - echo "Job failed"
-
-  onSuccess:
-    type: command
-    args:
-      - echo "Job successful"
-
-  steps:
-    - type: command
-      args:
-        - 'echo "get somethings"'
-        - "bash script.sh"
-        - "curl 127.0.0.1/api/action"
-
-    - type: checkout
-      name: "Checkout code"
-
-    - type: terraformInit
-      name: "Terraform Init"
-
-    - type: envScan
-      name: OPA Scan
-
-    - type: terraformPlan
-      name: "Terraform Plan"
-
-    - type: terraformApply
-      name: "Terraform Apply"
-
-    - type: ansiblePlay
-      name: "Run playbook"
-
-destroy:
-  steps:
-    - type: checkout
-      name: "Checkout code"
-
-    - type: terraformInit
-      name: "Terraform Init"
-
-    - type: terraformPlan
-      name: "Terraform Plan"
-      args:
-        - "-destroy"
-
-    - type: terraformDestroy
-      name: "Terraform Destroy"
-
-    - type: command
-      name: "Say Bye"
-      args:
-        - echo "Bye!"
-```
-
-## pipeline 0.5 版本
-
-0.5 版除了增加了一些配置项之外，强化了默认动作补全，极大简化了 pipeline 的配置工作量。
-
-### 0.5 版本主要变化
-
-1. 配置方式变化，steps 下每个步骤都是独立的结构，不再是列表
-2. 每个 step 可以配置 before（前处理） 和 after（后处理）
-3. 每个 step 可以配置超时时间，单位秒
-4. plan/apply/destroy 中的 steps 中的每个步骤顺序固定，如果缺失则补全
-5. destroy 的 steps 中， terraformPlan 步骤的 args 默认包含 "-destroy"
-
-### 0.5 版本的完整版本示例
 
 ```yaml
 version: 0.5
@@ -349,9 +164,9 @@ destroy:
 
 apply 和 destroy 中的 steps 也是可以配置 before/after/timeout，为了简化显示只在 plan 中的 steps 中配置了 before/after/timeout。
 
-### 0.5 版本的简化版本示例
+## 简化版本示例
 
-0.5 版本的 pipeline 有默认会对 steps 进行补全。
+pipeline 默认会对 steps 进行补全。
 所以，如果没有 before/after/timeout 等额外的操作，可以不用具体配置 steps，系统会自动补全缺失的 step。
 
 ```yaml

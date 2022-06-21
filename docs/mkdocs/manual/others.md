@@ -54,6 +54,6 @@ cloudiac 不生成密钥，只支持添加己生成的 ssh 私钥。私钥可以
 平台管理员可以点击页面右上角的用户图标，在下拉菜单中选择 “系统设置” 进入系统设置页面:
 ![picture 45](../images/fce0ed64b5582c7668d2d19383e028581e749f6842feaa9750ac13763972592e.png){.img-fluid}  
 
-在系统设置中可以进行组织的管理，系统参数配置，及 Registry 配置。
+在系统设置中可以进行组织的管理，系统参数配置，及 IaC Exchange 配置。
 
-在 registry 配置中可以指定 registry 地址，指定后在创建策略组时就可以选择基于该 registry 中已发布的策略组创建，同时执行部署任务时也会自动启用该 registry 做为 terraform network mirror。
+在 IaC Exchange 配置中可以指定 IaC Exchange 地址，指定后在创建策略组时就可以选择基于该 IaC Exchange 中已发布的策略组创建，同时执行部署任务时也会自动启用该 IaC Exchange 做为 terraform network mirror。

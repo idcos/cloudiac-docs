@@ -1,4 +1,4 @@
-# 云模板 Pipeline
+# Stack Pipeline
 
 CloudIaC 支持 Pipeline 功能，通过 Pipeline 来对环境的 Plan、部署、销毁流程进行定义，默认的我们为所有任务类型定义了标准步骤流程，用户可以自定义 Pipeline，来增加步骤、调整步骤执行顺序等。
 
@@ -7,11 +7,11 @@ CloudIaC 支持 Pipeline 功能，通过 Pipeline 来对环境的 Plan、部署�
 
 ## 如何使用 Pipeline
 
-自定义 Pipeline 通过在云模板代码库中增加 Pipeline 文件实现，文件名为 `.cloudiac-pipeline.yml`。
+自定义 Pipeline 通过在Stack代码库中增加 Pipeline 文件实现，文件名为 `.cloudiac-pipeline.yml`。
 
 文件查找逻辑如下:
 
-1. 如果云模板设置了工作目录，则在工作目录下查找 `.cloudiac-pipeline.yml`，存在则使用
+1. 如果Stack设置了工作目录，则在工作目录下查找 `.cloudiac-pipeline.yml`，存在则使用
 2. 如果工作目录不存在则在代码库根目录下查找 `.cloudiac-pipeline.yml`，存在则使用
 3. 否则使用默认的 Pipeline 标准流程模板
 

@@ -1,3 +1,5 @@
 /cloudiac-docs.zip
 /.idea
 /venv/
+/docs/docs.json
+/docs/catalog.json

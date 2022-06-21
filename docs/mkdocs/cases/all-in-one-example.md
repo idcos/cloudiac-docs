@@ -8,7 +8,7 @@
 
 
 
-## 获取基础云模板
+## 获取基础Stack
 ```shell
 基础样板代码仓库,保存到自己的github仓库
 创建一个nginx服务
@@ -17,12 +17,12 @@ https://github.com/xiaodaiit/terraform-local-nginx
 ```
 
 
-##  创建云模板
+##  创建Stack
 
-### 组织视图 [新建云模板] 选择vcs仓库,找到刚才新增的样板间代码分支
+### 组织视图 [新建Stack] 选择vcs仓库,找到刚才新增的样板间代码分支
 ![image-202205131445](../images/img-202205131445.png)
 
-### 设置云模板变量
+### 设置Stack变量
 选择需要导入的变量
 ![image-202205131448](../images/img-202205131448.png)
 
@@ -33,12 +33,12 @@ https://github.com/xiaodaiit/terraform-local-nginx
 
 
 
-## 使用云模板创建ECS资源设置
+## 使用Stack创建ECS资源设置
 选择关联的 [演示项目]
 
 ![image-202205131453](../images/img-202205131453.png)
 
-选择云模板,点击 [部署]
+选择Stack,点击 [部署]
 ![image-202205131456](../images/img-202205131456.png)
 
 设置名称和执行部署通道然后点击 [执行部署]
@@ -57,7 +57,7 @@ https://github.com/xiaodaiit/terraform-local-nginx
 通过部署服务的ip地址加上资源创建输出的端口,即可访问nginx服务
 ![image-202205112150](../images/img-202205112150.png)
 
-以上就是通过样板预制云模板创建nginx服务的流程
+以上就是通过样板预制Stack创建nginx服务的流程
 
 ## 销毁资源
 点击 [销毁资源] 输入环境名称

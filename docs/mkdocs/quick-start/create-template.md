@@ -1,6 +1,6 @@
-#### 新建云模板
+#### 新建Stack
 
-进入『组织设置』-『云模板』页面并选择『新建云模板』
+进入『组织设置』-『Stack』页面并选择『新建云模板』
 
 ![picture 14](../images/b09c71a698d3aa34b17c86c0f80922777a31f90dc2abecab16ffa0069a853a65.png){.img-fluid}
 

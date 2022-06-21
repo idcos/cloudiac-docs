@@ -53,7 +53,7 @@ markdown_extensions:
 nav:
   - "快速入门":
     - "创建组织和项目": quick-start/create-org-project.md
-    - "创建云模板": quick-start/create-template.md
+    - "创建Stack": quick-start/create-template.md
     - "部署环境": quick-start/deploy-env.md
 
   - "产品介绍":
@@ -66,18 +66,18 @@ nav:
     - "组织/项目/角色": manual/org-project-role.md
     - "组织/项目概览": manual/org-project-overview.md
     - "VCS 管理": manual/vcs.md
-    - "云模板管理": manual/templates.md
+    - "Stack管理": manual/templates.md
     - "变量与资源账号": manual/res-account-variable.md
     - "环境管理": manual/env.md
     - "环境高级功能": manual/env-advanced.md
     - "安全合规": manual/compliance.md
-    - "云模板 Pipeline": manual/pipeline.md
+    - "Stack Pipeline": manual/pipeline.md
     - "费用预估和统计": manual/env-cost.md
     - "通用功能": manual/others.md
     - "Token 获取": manual/vcs-token.md
 
-  - "Registry 手册":
-    - "Registry简介": manual/registry.md
+  - "IaC Exchange 手册":
+    - "IaC Exchange简介": manual/registry.md
     - "Providers": manual/registry-providers.md
     - "Modules": manual/registry-modules.md
     - "策略组": manual/registry-polices.md
@@ -93,8 +93,8 @@ nav:
     - "合规检查": "cases/check-policy.md"
     - "使用合规策略限制测试环境的机器规格": "cases/opa-instance-type.md"
     - "自定义合规策略": "cases/git-create-policy-group.md"
-    - "使用Registry中的策略组": "cases/registry-policygroup.md"
-    - "漂移检测": "cases/drift_detection.md"
+    - "使用IaC Exchange中的策略组": "cases/registry-policygroup.md"
+    - "变更漂移检测": "cases/drift_detection.md"
     - "在环境资源中部署应用": "cases/ssh_key.md"
     - "自定义terraform版本": "cases/cloud_template.md"
     - "定时销毁环境": "cases/env-auto-destroy.md"

@@ -1,7 +1,7 @@
 # Regitstry 中的策略组使用
-在 CloudIaC Registry 中，提供了大量开箱即用的合规策略，您可以根据自己的需要选择合适的策略组进行导入使用。
+在 IaC Exchange 中，提供了大量开箱即用的合规策略，您可以根据自己的需要选择合适的策略组进行导入使用。
 
-## 配置 Registry 地址
+## 配置 IaC Exchange 地址
 
 ### 系统设置
 
@@ -9,11 +9,11 @@
 
 ![系统设置](../images/registry-policygroup-01.png){.img-fluid}
 
-### Registry 配置
+### IaC Exchange 配置
 
-选择 【Registry 配置】，然后在 【Registry 地址】 文本框中输入地址并【保存】
+选择 【IaC Exchange 配置】，然后在 【IaC Exchange 地址】 文本框中输入地址并【保存】
 
-![Registry 地址设置](../images/registry-policygroup-02.png){.img-fluid}
+![IaC Exchange 地址设置](../images/registry-policygroup-02.png){.img-fluid}
 
 ## 新建策略组
 
@@ -33,7 +33,7 @@
 
 新建策略组第一步：【选择来源】
 
-先选择【Registry】，再选择其中需要新建的【策略组】和【版本】。
+先选择【IaC Exchange】，再选择其中需要新建的【策略组】和【版本】。
 
 ![新建策略组第一步](../images/registry-policygroup-05.png){.img-fluid}
 

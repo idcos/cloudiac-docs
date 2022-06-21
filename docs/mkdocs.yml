@@ -58,7 +58,7 @@ nav:
 
   - "产品介绍":
     - "产品概述": index.md
-    - "功能特性": intro/product-features.md
+    - "术语解释": intro/product-glossary.md
     - "产品优势": intro/product-advantage.md
     - "产品构架": intro/product-architecture.md
 
@@ -89,8 +89,8 @@ nav:
     - "vcs集成": cases/create-vcs.md
 
   - "用户场景":
-    - "纳管terraform环境": "cases/aliyun-ecs.md"
-    - "检测环境资源是否合规": "cases/check-policy.md"
+    - "环境即服务": "cases/env-as-service"
+    - "合规检查": "cases/check-policy.md"
     - "使用合规策略限制测试环境的机器规格": "cases/opa-instance-type.md"
     - "自定义合规策略": "cases/git-create-policy-group.md"
     - "使用IaC Exchange中的策略组": "cases/registry-policygroup.md"

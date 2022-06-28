@@ -108,7 +108,7 @@ nav:
     - "Consul开启acl和tls": installation/consul.md
     - "Consul高可用部署": installation/consul-cluster.md
 
-  - "Releases": releases.md
+#  - "Releases": releases.md
   - "视频介绍": https://space.bilibili.com/2138433328/channel/seriesdetail?sid=1908688
 
 #  - "API文档":

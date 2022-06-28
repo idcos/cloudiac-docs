@@ -22,7 +22,7 @@ Stack 定义文件编写好后将文件提交到 VCS
 ![添加VCS](../images/aliyun-ecs-1653815491547.png)
 
 ### 新建 Stack
-1. 添加 VCS 集成后我们接下来在组织-云模板页面选择『新建 Stack』
+1. 添加 VCS 集成后我们接下来在组织-Stack页面选择『新建 Stack』
    ![新建Stack](../images/env-as-service-1655791818882.png)
 
 2. 依次选择 VCS、仓库、分支/Tag 以及 terraform 版本后选择下一步进入变量设置，导入 Terraform 变量，并在其他变量设置中选择 playbook 文件，选择该文件表示将在部署时调用 ansible 完成应用的部署

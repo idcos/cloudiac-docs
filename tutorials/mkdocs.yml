@@ -50,7 +50,7 @@ markdown_extensions:
 nav:
   - "快速入门":
       - "创建组织和项目": quick-start/create-org-project.md
-      - "创建云模板": quick-start/create-template.md
+      - "创建Stack": quick-start/create-template.md
       - "部署环境": quick-start/deploy-env.md
 
   - "Registry":
@@ -67,9 +67,9 @@ nav:
     - "本地资源创建": "cases/all-in-one-example.md"
     - "资源变更检测": "cases/drift_detection.md"
     - "添加SSH密钥": "cases/ssh_key.md"
-    - "云模板terraform版本选择": "cases/cloud_template.md"
+    - "Stackterraform版本选择": "cases/cloud_template.md"
     - "创建策略组": "cases/create-policy-group.md"
-    - "为云模板开启合规策略": "cases/template-enable-policy.md"
+    - "为Stack开启合规策略": "cases/template-enable-policy.md"
     - "为环境开启合规策略": "cases/env-enable-policy.md"
     - "环境创建成功后定时销毁": "cases/env-auto-destroy.md"
     - "添加部署失败通知": "cases/deploy-failed-notification.md"
@@ -88,8 +88,8 @@ nav:
   #      演示用户的 ansible playbook 中要使用指定的 collection，需要在执行 play 步骤前进行安装
   #      ansible collection 文档：https://docs.ansible.com/ansible/latest/user_guide/collections_using.html
   #  - "添加 SSH 密钥": |
-  #      密钥如何生成，如何添加到平台，如何在云模板中将公钥绑定到创建的资源(演示 aliyun ecs)
-  #  - "在云模板中指定 terraform 版本": ""
+  #      密钥如何生成，如何添加到平台，如何在Stack中将公钥绑定到创建的资源(演示 aliyun ecs)
+  #  - "在Stack中指定 terraform 版本": ""
   #  - "接入 LDAP 认证": ""
   #  - "创建 ansible host group": |
   #      创建 ansible host group，并给主机组添加变量，然后演示在 playbook 中使用主机组及其变量

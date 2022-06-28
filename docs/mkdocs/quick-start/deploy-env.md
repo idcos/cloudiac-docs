@@ -5,7 +5,7 @@
 
 进入『项目信息』-『Stack』页面，可以看到与该项目关联的Stack，选择相应的Stack，点击『部署』即可发起环境部署操作
 
-![picture 22](../images/158f8b95234b02896d2e6b8719760ed4c1e5d7136b60353be1504d0b1272f419.png){.img-fluid}
+![picture 22](../images/env-depoly-01.png){.img-fluid}
 #### 环境设置
 在环境部署页面中，可能定义环境名称，选择使用的Stack仓库分支/标签（默认的分支/标签直接使用Stack中配置的值。
 设置环境工作的目录

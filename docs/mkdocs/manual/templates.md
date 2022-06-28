@@ -24,17 +24,17 @@ Stack由组织管理员创建、编辑和删除，普通用户只能基于已创
 
 ## Stack合规
 在Stack的编辑页面的“设置”步骤中可以对Stack开启合规检测并绑定合规策略组：
-![picture 40](../images/59caa9d8c6a1bfbbb4d8a326abef5282bdbb9bf8d7e4dde11c7e6130df6c3413.png){.img-fluid}
+![picture 40](../images/tpl-07.png){.img-fluid}
 
 开启合规检测后并保存就会触发合规检测，在Stack列表中即可查看其合规状态：
-![picture 41](../images/52d40230d18870c5a0162ae19df5b70b70386319a17f2d791297351aa5129b72.png){.img-fluid}
+![picture 41](../images/tpl-08.png){.img-fluid}
 
 :::tip
 Stack开启合规后基于该Stack新创建环境都会默认开启合规检测，并绑定Stack中设置的合规策略组，您可以选择将其关闭或者重新绑定合规策略组。
 :::
 
 :::tip
-也可以通过合规中心来开启Stack的合规检测，具体请参考：[安全合规](../../manual/compliance/)
+也可以通过合规中心来开启Stack的合规检测，具体请参考：[安全合规](../manual/compliance.md)
 :::
 
 ## Terraform 版本选择

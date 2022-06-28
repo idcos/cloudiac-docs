@@ -89,7 +89,7 @@ nav:
     - "vcs集成": cases/create-vcs.md
 
   - "用户场景":
-    - "环境即服务": "cases/env-as-service"
+    - "环境即服务": "cases/env-as-service.md"
     - "合规检查": "cases/check-policy.md"
     - "使用合规策略限制测试环境的机器规格": "cases/opa-instance-type.md"
     - "自定义合规策略": "cases/git-create-policy-group.md"

@@ -3,13 +3,13 @@
 
 ### 变量继承
 
-CloudIaC中的变量可以组织、云模板、项目、环境四个层级中进行设置；
+CloudIaC中的变量可以组织、Stack、项目、环境四个层级中进行设置；
 
 在组织中定义的变量会应用在该组织中所有部署的环境上；
 
 在项目中定义的变量会应用在该项目中所有部署的环境上；
 
-在云模板中定义的变量会应用在所有基于该云模板部署的环境上；
+在Stack中定义的变量会应用在所有基于该Stack部署的环境上；
 
 在整个继承链条上同名的变量低层级的值覆盖高层级的值；
 
@@ -31,7 +31,7 @@ Terraform变量是Terraform执行时使用的变量，通常在资源描述配�
 
 ### 其他变量
 
-其他变量只在『云模板』中进行定义，包含tfvars文件变量和playbook文件变量；
+其他变量只在『Stack』中进行定义，包含tfvars文件变量和playbook文件变量；
 
 tfvars文件通常是定义不同资源的变量放在不同的tfvars文件中，这样在执行terraform时通过引用不同的tfvars文件来创建不同的资源；
 
@@ -62,8 +62,8 @@ playbook文件是在调用ansible进行应用部署时定义的描述配置文�
 | CLOUDIAC_ENV_NAME      | 当前任务的环境名称                           |
 | CLOUDIAC_ENV_STATUS    | 当前环境状态(启动任务时)                     |
 | CLOUDIAC_ENV_RESOURCES | 当前环境中的资源数据(启动任务时)             |
-| CLOUDIAC_COMMIT        | 当前任务的云模板代码 commit hash             |
-| CLOUDIAC_BRANCH        | 当前任务的云模板代码的分支                   |
+| CLOUDIAC_COMMIT        | 当前任务的Stack代码 commit hash             |
+| CLOUDIAC_BRANCH        | 当前任务的Stack代码的分支                   |
 | CLOUDIAC_TASK_ID       | 当前任务的 id                                |
 | CLOUDIAC_TF_VERSION    | 当前任务使用的 terraform 版本号(eg. 0.14.11) |
 

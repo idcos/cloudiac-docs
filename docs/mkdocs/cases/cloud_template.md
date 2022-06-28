@@ -1,10 +1,10 @@
-# 云模板terraform版本选择
+# Stack terraform版本选择
 
 ## terraform版本信息选择
 
-### 方式一 基于创建云模板模式选择terraform版本
+### 方式一 基于创建Stack模式选择terraform版本
 
-在云模板的编辑页面,新建云模板,填写对应的信息后,选择terraform版本
+在Stack的编辑页面,新建Stack,填写对应的信息后,选择terraform版本
  ![image-20220511](../images/img-202205111356.png){.img-fluid}
 
 

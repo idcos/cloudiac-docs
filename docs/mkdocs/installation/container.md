@@ -144,7 +144,7 @@ PORTAL_ADDRESS=""
 # 需要配置为机器的内网 ip:port，不可使用 127.0.0.1
 CONSUL_ADDRESS=""
 
-# cloudiac registry 服务地址(选填)，示例：http://registry.cloudiac.org
+# IaC Exchange 服务地址(选填)，示例：http://registry.cloudiac.org
 REGISTRY_ADDRESS=""
 
 # 使用 https 向外（比如runner）发送请求的时候是否允许使用不安全证书

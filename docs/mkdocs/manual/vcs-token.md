@@ -12,7 +12,7 @@ tips：名称为该令牌的名称，到期时间为该令牌的有效时间（�
 
 ![img](../images/registry-vcs5.png){.img-fluid}
 
-令牌成功创建，此令牌即可在 registry 中使用
+令牌成功创建，此令牌即可在 IaC Exchange 中使用
 
 ![img](../images/registry-vcs6.png){.img-fluid}
 
@@ -40,7 +40,7 @@ tips：名称为该令牌的名称，到期时间为该令牌的有效时间（�
 
 ![img](../images/registry-vcs11.png){.img-fluid}
 
-此 token 即可在 registry 中使用
+此 token 即可在 IaC Exchange 中使用
 
 ![img](../images/registry-vcs12.png){.img-fluid}
 
@@ -68,6 +68,6 @@ tips：名称为该令牌的名称，到期时间为该令牌的有效时间（�
 
 ![img](../images/registry-vcs17.png){.img-fluid}
 
-此 token 即可在 registry 中使用
+此 token 即可在 IaC Exchange 中使用
 
 ![img](../images/registry-vcs18.png){.img-fluid}

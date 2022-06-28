@@ -2,7 +2,7 @@
 
 ### CloudIaC 向环境传递 terraform 变量
 
-在 CloudIaC 中, 用户可以通过同一套云模板创建出多个环境; 而在部署环境之前, 用户还可以向环境传递变量从而覆盖已有的 terraform 变量, 这样灵活的修改环境的规格属性从而创建出不同的实例资源(本次修改仅在本次创建实例时生效);
+在 CloudIaC 中, 用户可以通过同一套Stack创建出多个环境; 而在部署环境之前, 用户还可以向环境传递变量从而覆盖已有的 terraform 变量, 这样灵活的修改环境的规格属性从而创建出不同的实例资源(本次修改仅在本次创建实例时生效);
 
 ### CloudIaC 传递 terraform 变量的几种方法
 
@@ -80,11 +80,11 @@ sg_name = "sg-cloudiac-example-prod"
 cidr_block = "10.1.0.0/16"
 ```
 
-### 创建一个云模板
+### 创建一个Stack
 
-基于「aliyn_ecs」 vcs 创建一个「app_01_云模板」的模板;
+基于「aliyn_ecs」 vcs 创建一个「app_01_Stack」的模板;
 
-![app_01_云模板](../images/tfvars-template-app01.jpg)
+![app_01_Stack](../images/tfvars-template-app01.jpg)
 
 ### 分别创建生产、开发两个环境
 

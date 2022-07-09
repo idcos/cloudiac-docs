@@ -6,7 +6,7 @@
 
 为了解决以上问题，cloudiac 提供了合规检测功能，通过合规检测功能，您只需在 cloudiac 中创建策略组，并将策略组绑定到环境，即可实现自动检测资源的合规性
 
-目前 cloudiac 可以使用 vcs 仓库和 registry 中的策略组，如果 registry 中无满足您需求的策略组，您还可自行编写合规策略并上传到自己的 vcs 仓库或者我们的 registry 平台，即可在 cloudiac 中使用
+目前 cloudiac 可以使用 vcs 仓库和 IaC Exchange 中的策略组，如果 IaC Exchange 中无满足您需求的策略组，您还可自行编写合规策略并上传到自己的 vcs 仓库或者我们的 IaC Exchange 平台，即可在 cloudiac 中使用
 
 有关合规策略的详细介绍，请参考[安全合规](/docs/mkdocs/manual/compliance.md)
 
@@ -59,13 +59,13 @@
 
 ![img](../images/check-policy8.png)
 
-### 云模板合规开启方式
+### Stack合规开启方式
 
 点击【进入合规】
 
 ![img](../images/check-policy9.png)
 
-选择菜单【合规配置】下的【云模板】
+选择菜单【合规配置】下的【Stack】
 
 ![img](../images/check-policy10.png)
 
@@ -96,29 +96,29 @@
 
 ![img](../images/check-policy14.png)
 
-### 云模板合规检测效果展示
+### Stack合规检测效果展示
 
-#### 云模板不合规
+#### Stack不合规
 
-其中 Passed 代表云模板中 tf 文件资源满足该条合规策略，Violated 代表云模板中 tf 文件资源不满足该条合规策略
+其中 Passed 代表Stack中 tf 文件资源满足该条合规策略，Violated 代表Stack中 tf 文件资源不满足该条合规策略
 
 ![img](../images/check-policy15.png)
 
-#### 云模板合规
+#### Stack合规
 
-只有当所有合规策略都 passed ，该云模板才算合规
+只有当所有合规策略都 passed ，该Stack才算合规
 
 ![img](../images/check-policy16.png)
 
 ### 合规检测机制说明
 
-cloudiac 中可以针对云模板或者环境进行合规检测，但检测机制并不相同
+cloudiac 中可以针对Stack或者环境进行合规检测，但检测机制并不相同
 
-云模板合规是检查的 tf 静态文件，环境合规检测的是动态生成的 plan 文件，因此，对同一云模板与其创建出来的环境进行合规检测，结果并不一致。
+Stack合规是检查的 tf 静态文件，环境合规检测的是动态生成的 plan 文件，因此，对同一Stack与其创建出来的环境进行合规检测，结果并不一致。
 
-我们在云模板里面会定义很多变量，比如资源```alicloud_eip_association```定义了一个 ```instance_id = alicloud_instance.web[count.index].id```，这些变量的值在环境部署前是不确定的，只有执行了部署才知道最终生效的值，因此云模板合规和环境合规分别满足不同场景，两者结合一起确保资源合规性。
+我们在Stack里面会定义很多变量，比如资源```alicloud_eip_association```定义了一个 ```instance_id = alicloud_instance.web[count.index].id```，这些变量的值在环境部署前是不确定的，只有执行了部署才知道最终生效的值，因此Stack合规和环境合规分别满足不同场景，两者结合一起确保资源合规性。
 
-#### 针对云模板进行合规检测
+#### 针对Stack进行合规检测
 
 ![img](../images/check-policy17.png)
 

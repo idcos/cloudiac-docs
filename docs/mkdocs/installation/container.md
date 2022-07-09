@@ -144,7 +144,7 @@ PORTAL_ADDRESS=""
 # 需要配置为机器的内网 ip:port，不可使用 127.0.0.1
 CONSUL_ADDRESS=""
 
-# cloudiac registry 服务地址(选填)，示例：http://registry.cloudiac.org
+# IaC Exchange 服务地址(选填)，示例：http://registry.cloudiac.org
 REGISTRY_ADDRESS=""
 
 # 使用 https 向外（比如runner）发送请求的时候是否允许使用不安全证书
@@ -221,7 +221,7 @@ RUNNER_OFFLINE_MODE="false"
 ```bash
 docker-compose up
 ```
-> 默认为前台启动，以便于排查问题，在确定服务正常后可以改为后台启动：`dokcker-compose up -d`。
+> 默认为前台启动，以便于排查问题，在确定服务正常后可以改为后台启动：`docker-compose up -d`。
 
 ---
 

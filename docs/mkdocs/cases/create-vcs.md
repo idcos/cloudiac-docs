@@ -1,12 +1,12 @@
 # vcs集成
 ## 添加vcs
-**登录 Registry 以后，选择 vcs 集成**
+**登录 IaC Exchange 以后，选择 vcs 集成**
 
 ![img](../images/registry-vcs1.png){.img-fluid}
 
 如果是首次登录，则要求输入命名空间。
 
-tips：命名空间相当于用户的存储空间，使用 registry 发布的 provider,module，策略组将会存放在命名空间中，
+tips：命名空间相当于用户的存储空间，使用 IaC Exchange 发布的 provider,module，策略组将会存放在命名空间中，
 
 如果要使用发布 provider 功能，则必须额外提供 GPG 签名密钥，有关 GPG 签名密钥的获取，请参考[GPG签名密钥的获取](#gpg)
 

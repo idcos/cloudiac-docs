@@ -5,9 +5,9 @@ echo "Start creating the project directory ##################################"
 mkdir -p /usr/yunji/cloudiac/var/{consul,mysql} && cd /usr/yunji/cloudiac/
 
 echo
-read  -p "Please enter the version to be installed---default [v0.9.4]：" version </dev/tty
+read  -p "Please enter the version to be installed---default [v0.11.0]：" version </dev/tty
 if [ -z "${version}" ];then
-  version=v0.9.4
+  version=v0.11.0
 fi
 
 all_variables="version=$version"

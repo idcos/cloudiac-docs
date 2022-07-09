@@ -87,7 +87,7 @@ https://static.example.org/providers/cloudiac/1.0.0/terraform-provider-cloudiac_
 
 
 
-### 登录 registry 执行发布:
+### 登录 IaC Exchange 执行发布:
 
 **必填参数：下载路径，图标**
 
@@ -96,4 +96,4 @@ https://static.example.org/providers/cloudiac/1.0.0/terraform-provider-cloudiac_
 ![img](../images/registry-provider-publish2.png)
 
 下载路径可以是 zip 包或者是 SHA256SUMS 文件，如果下载路径是 SHA256SUMS 文件则会发布文件中包含的所有 zip 包,
-如果下载路径同目录下有 terraform-provider-${TYPE}_${VERSION}_docs.zip 文件，则在发布时也会同时下载 docs 并解析生成 provider 文档，生成的文档可以在 registry 平台查看
+如果下载路径同目录下有 terraform-provider-${TYPE}_${VERSION}_docs.zip 文件，则在发布时也会同时下载 docs 并解析生成 provider 文档，生成的文档可以在 IaC Exchange 平台查看

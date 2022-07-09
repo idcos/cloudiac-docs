@@ -10,9 +10,9 @@ mkdir -p /usr/yunji/cloudiac/var/{consul,mysql} && cd /usr/yunji/cloudiac/
 # 第二步生成docker-compose.yml文件
 echo
 echo "Generate docker-compose.yml file #########################"
-read  -p "Please enter the version to be installed---default [v0.9.4]：" version </dev/tty
+read  -p "Please enter the version to be installed---default [v0.11.0]：" version </dev/tty
 if [ -z "${version}" ];then
-  version=v0.9.4
+  version=v0.11.0
 fi
 
 cat > /usr/yunji/cloudiac/docker-compose.yml << EOF
@@ -101,37 +101,37 @@ EOF
 echo
 echo "Generate .evn configuration file #########################"
 echo
-read  -p "Please enter a system administrator account name, the default is [admin@example.com]:" admin </dev/tty
+read  -p "Please enter a platform administrator email, default is [admin@example.com]:" admin </dev/tty
 if [ -z "${admin}" ];then
   admin=admin@example.com
 fi
 echo
-read  -p "Please enter the platform administrator password, the default is [admin123]:" password </dev/tty
+read  -p "Please enter the platform administrator password, default is random:" password </dev/tty
 
 if [ -z "${password}" ];then
-  password=admin123
+  password=$(openssl rand -base64 8)
 fi
 
 echo
-read  -p "Encryption key configuration, the default is [admin]:" secret_key </dev/tty
+read  -p "Encryption key configuration, default is random:" secret_key </dev/tty
 
 if [ -z "${secret_key}" ];then
-  secret_key=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 6)
+  secret_key=$(openssl rand -base64 16)
 fi
 
 echo
-read  -p "Please enter the database password, the default is [password]:" mysql_psword </dev/tty
+read  -p "Please enter the database password, default is random:" mysql_psword </dev/tty
 
 if [ -z "${mysql_psword}" ];then
-  mysql_psword=password
+  mysql_psword=$(openssl rand -base64 12)
 fi
 
 
 echo
-read -p "Add mirror address, the default is [docker hub]:  " registry_address </dev/tty
+read -p "Add mirror address, default is [https://exchange.cloudiac.org]:  " registry_address </dev/tty
 
 if [ -z "${registry_address}" ];then
-  registry_address=""
+  registry_address="https://exchange.cloudiac.org"
 fi
 
 
@@ -143,7 +143,7 @@ IAC_ADMIN_EMAIL="$admin"
 ## 平台管理员密码(必填)，要求长度大于 8 且包含字母、数字、特殊字符
 IAC_ADMIN_PASSWORD="$password"
 
-# cloudiac registry 服务地址(选填)，示例：http://registry.cloudiac.org/
+# IaC Exchange 服务地址(选填)，示例：https://exchange.cloudiac.org/
 REGISTRY_ADDRESS="$registry_address"
 
 # 加密密钥配置(必填)
@@ -187,16 +187,17 @@ echo "create iac environment #########################"
 docker-compose up -d
 echo "Environment created successfully #########################"
 
-#public_ip="$(curl ip.3322.net)"
+
+public_ip=$(curl ip.sb)
 
 echo ""
-echo "The access address is your ip port: [$(curl ip.sb)]"
 echo ""
-
-echo "Your initial installation version is: $version, your system account initialization password is: $admin, your system account initialization password is: $password,
-Your encryption key is: $secret_key, your database initial password is: $mysql_psword"
-
-echo "For more details, please check the official documentation: [https://idcos.github.io/cloudiac/]"
+echo -e "current version: \033[33m $version \033[0m "
+echo -e "manager username:\033[33m $admin \033[0m "
+echo -e "password:\033[33m $password \033[0m "
+echo -e "visit address: \033[32m[$public_ip]\033[0m "
+echo -e "project address: \033[32m https://github.com/idcos/cloudiac\033[0m "
+echo -e "documents: \033[32m https://docs.cloudiac.org \033[0m "
 
 
 

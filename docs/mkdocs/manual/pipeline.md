@@ -2,8 +2,8 @@
 
 CloudIaC 支持 Pipeline 功能，通过 Pipeline 来对环境的 Plan、部署、销毁流程进行定义，默认的我们为所有任务类型定义了标准步骤流程，用户可以自定义 Pipeline，来增加步骤、调整步骤执行顺序等。
 
-执行任务时，部署日志会按 Pipeline 不定义的步骤进行分步展示：
-![img.png](../images/pipeline1.png){.img-fluid}
+执行任务时，部署日志会按 Pipeline 定义的步骤进行分步展示：
+![img.png](../images/pipeline0.5-1.png){.img-fluid}
 
 ## 如何使用 Pipeline
 
@@ -51,27 +51,21 @@ apply:
     name: 任务成功
     type: command
     args:
-      - echo "Task successful"
-      - test "$CLOUDIAC_ENV_STATUS" = "inactive" && echo "Environment created"
-      - test "$CLOUDIAC_ENV_STATUS" = "failed" && echo "Environment recovered"
+      - echo "apply successed"
 
   onFail:
     name: 任务失败
     type: command
     args:
-      - echo "Task failed"
+      - echo "apply failed"
 
-  steps: [] # 流程步骤省略
+  steps: # 流程步骤省略
 ```
 
 在 command 步骤中可以引用环境变量的值，通过判断变量值来执行不同的操作。如示例中基于环境在任务启动时的状态来判断是创建环境还是恢复失败状态的环境。
 
-:::tip
-`CLOUDIAC_ENV_STATUS` 为任务启动时平台自动导出的环境变量，完整的导出环境变量列表见文档: [变量与资源账号](../res-account-variable/)
-:::
-
 回调步骤总是在流程的最后展示，流程步骤展示效果:
-![img.png](../images/pipeline2.png){.img-fluid}
+![img.png](../images/pipeline0.5-2.png){.img-fluid}
 
 ## 完整的自定义 Pipeline 示例
 

@@ -55,7 +55,7 @@ nav:
     - "创建组织和项目": quick-start/create-org-project.md
     - "创建Stack": quick-start/create-template.md
     - "部署环境": quick-start/deploy-env.md
-    - "Stack使用": quick-start/stack-use.md
+    - "导入Stack": quick-start/stack-use.md
 
   - "产品介绍":
     - "产品概述": index.md

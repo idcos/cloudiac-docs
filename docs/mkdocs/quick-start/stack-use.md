@@ -31,7 +31,7 @@
 
 #### 选择相应文件
 
-选择您『ansible playbook』文件以及『ssh密钥』（『小提示：』不一定每个Stack部署都需要）。此处因以VMWare虚拟机安装Redis服务为例，以便于在虚拟机上部署Redis服务。完成之后点击『下一步』
+选择您『ansible playbook』文件以及『ssh密钥』(『小提示：』不一定每个Stack部署都需要)。此处因以VMWare虚拟机安装Redis服务为例，以便于在虚拟机上部署Redis服务。完成之后点击『下一步』
 ![picture 46](../images/selectFile.png){.img-fluid}
 
 #### 基础设置

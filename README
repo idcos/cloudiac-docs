@@ -8,5 +8,6 @@ bash build.sh
 
 ## 本地查看
 ```
+pip3 install mkdocs mkdocs-materia
 mkdocs serve
 ```

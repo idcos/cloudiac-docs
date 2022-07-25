@@ -1,6 +1,6 @@
 
 :::tip
-以下步骤关于Stack如何通过CloudIac实现快速部署  (以VMWare虚拟机安装Redis服务为例)
+以下步骤说明如何从Exchange导入Stack并通过CloudIaC实现快速部署(以VMWare虚拟机安装Redis服务为例)
 :::
 #### 导入Stack
 
@@ -36,7 +36,7 @@
 
 #### 基础设置
 
-填写 Stack 在 CloudIaC 平台的『显示名称』和『描述』，以及『Terraform版本』，完成之后点击『下一步』
+填写Stack在CloudIaC平台的『显示名称』和『描述』，以及『Terraform版本』，完成之后点击『下一步』
 ![picture 47](../images/fullInfo.png){.img-fluid}
 
 #### 关联项目

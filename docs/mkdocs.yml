@@ -84,6 +84,7 @@ nav:
     - "策略组": manual/registry-polices.md
     - "Provider 发布": "cases/provider-publish.md"
     - "Module 发布": "cases/module-publish.md"
+    - "Stack 发布": "cases/stack-publish.md"
     - "策略组发布": "cases/policy-group-publish.md"
     - "获取签名密钥": cases/create-gpg-key.md
     - "添加签名密钥": cases/add-gpg-key.md

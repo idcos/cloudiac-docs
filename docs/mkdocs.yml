@@ -77,8 +77,8 @@ nav:
     - "通用功能": manual/others.md
     - "Token 获取": manual/vcs-token.md
 
-  - "IaC Exchange 手册":
-    - "IaC Exchange简介": manual/registry.md
+  - "IaC Store 手册":
+    - "IaC Store 简介": manual/iac-store.md
     - "Providers": manual/registry-providers.md
     - "Modules": manual/registry-modules.md
     - "策略组": manual/registry-polices.md

@@ -79,7 +79,7 @@ nav:
 
   - "IaC Store 手册":
     - "IaC Store 简介": manual/iac-store.md
-    - "Providers": manual/registry-providers.md
+    - "Providers": manual/iac-store-providers.md
     - "Modules": manual/registry-modules.md
     - "策略组": manual/registry-polices.md
     - "Provider 发布": "cases/provider-publish.md"

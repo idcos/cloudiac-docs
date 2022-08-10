@@ -1,18 +1,13 @@
 # 策略组编写
 
-## 什么是 [CloudIaC 合规策略](https://cloudiac.org/markdown/docs/mkdocs/manual/compliance.md)
-
-## [合规策略的使用](https://cloudiac.org/markdown/docs/mkdocs/cases/check-policy.md)
-
-## 编写合规策略
-
-### 合规策略组
+## 合规策略组规范
 
 合规策略组以代码仓库的形式组织相关联的合规策略和说明文件。
 
+### 文件目录结构
 策略组目录结构：
 
-```shell
+```text
 cloudiac-policy-group-demo
 ├── README.md
 ├── policy-a.rego 
@@ -24,7 +19,9 @@ cloudiac-policy-group-demo
 
 
 
-#### 合规策略组说明文件：README.md
+### 说明文件
+
+合规策略组的说明文件固定使用文件名：README.md，该文件描述了策略组的名称和内容简介。
 
 README文件示例：
 
@@ -33,19 +30,18 @@ README文件示例：
 该策略组用于演示 cloudiac 的策略组织形式。
 ```
 
-#### 合规策略：.rego
+### 合规策略文件
 
-一个策略文件(policy)可以有多条规则 (rule)，通过文件内容中的注释来表示策略名称、严重级别等。
+每个合规策略为一个 OPA 策略文件，文件名以 `rego` 结尾，一个策略文件 (policy) 可以有多条规则 (rule)，通过文件内容中的注释来表示策略名称、严重级别等。
 
 
-
-### 合规策略
+## 合规策略
 
 合规策略文件名以 rego 为后缀，策略相关的元数据以注释的形式标记在文件头。
 
 rego 文件结构示例：
 
-~~~go
+```rego
 package cloudiac
 
 ## id 为策略在策略组中的唯一标识，由大小写英文字符、数字、"."、"_"、"-" 组成
@@ -85,18 +81,18 @@ nameIsHello {
 nameIsHello {
 	input.name == "world"
 }
-~~~
+```
 
 - 若无 "@id:" 注释则使用：文件名做为策略 id
 - 若无 "@name:" 注释则使用策略 id 做为名称
 - 若无 "@severity:" 注释则默认为 MEDIUM 级别
 - "@label:", "@fix_suggestion:" 为可选
 
-#### package
+### package
 
 包名，一般使用固定的 `package cloudiac`。
 
-#### rule
+### rule
 
 在 rego 策略执行过程中，是对每条规则执行 query 的一个过程。
 
@@ -114,7 +110,7 @@ nameIsHello {
 
 ![img](../images/policy-group-demo2.png)
 
-#### rego 语法
+### rego 语法
 
 在一个 rego 文件中，多条相同规则之间为 OR 关系，比如我们要判断一个安全组的端口是否使用 80 或者 443，应该这么写：
 
@@ -137,51 +133,41 @@ nameIsHello {
 
 ![img](../images/commone-grammer.png)
 
-rego 更多的语法可以参考[opa 网站](https://www.openpolicyagent.org/docs/latest/policy-language/)的语法说明，也可以参考 terrascan 的规则库，里面有许多写的很好的规则检测方式。
+rego 更多的语法可以参考 [opa 网站](https://www.openpolicyagent.org/docs/latest/policy-language/) 的语法说明，也可以参考 terrascan 的规则库，里面有许多写的很好的规则检测方式。
 
-## 常用的合规策略规则
+## 常用合规策略规则
 
 1. 选择资源
-
 使用 [_] 数组选择语法选择一组资源
-
-```go
+```rego
 alicloudInstance[instance.id] {
   instance := input.alicloud_instance[_] // 选择 alicloud_instance 资源实例
   ...
 }
 ```
-
-1. true / false 判断
-
-```go
+2. true / false 判断
+```rego
 apiGatewayNoAccessLogs[stage.id] {
   stage := input.aws_apigatewayv2_stage[_]
   not stage.config.access_log_settings
 }
 ```
-
-1. 字符串比较
-
-```go
+3. 字符串比较
+```rego
 apiGatewayAuthorizationDisabled[api_gw.id] {
     api_gw := input.aws_api_gateway_method[_]
     api_gw.config.authorization == "NONE"
 }
 ```
-
-1. 检测是否为空值
-
-```go
+4. 检测是否为空值
+```rego
 amiNotEncrypted[api.id] {
     api := input.aws_ami[_]
     object.get(api.config, "ebs_block_device", "undefined") == "undefined"
 }
 ```
-
-1. 多值检测
-
-```go
+5. 多值检测
+```rego
 ebsEncrypted[block.id] {
     block := input.aws_ebs_volume[_]
     checkEncryption(block.config) == true

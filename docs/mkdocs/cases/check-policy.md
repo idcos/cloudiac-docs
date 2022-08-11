@@ -6,7 +6,7 @@
 
 为了解决以上问题，cloudiac 提供了合规检测功能，通过合规检测功能，您只需在 cloudiac 中创建策略组，并将策略组绑定到环境，即可实现自动检测资源的合规性
 
-目前 cloudiac 可以使用 vcs 仓库和 IaC Exchange 中的策略组，如果 IaC Exchange 中无满足您需求的策略组，您还可自行编写合规策略并上传到自己的 vcs 仓库或者我们的 IaC Exchange 平台，即可在 cloudiac 中使用
+目前 cloudiac 可以使用 vcs 仓库和 IaC Store 中的策略组，如果 IaC Store 中无满足您需求的策略组，您还可自行编写合规策略并上传到自己的 vcs 仓库或者我们的 IaC Store 平台，即可在 cloudiac 中使用
 
 有关合规策略的详细介绍，请参考[安全合规](/docs/mkdocs/manual/compliance.md)
 

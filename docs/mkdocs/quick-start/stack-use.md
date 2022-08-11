@@ -1,10 +1,10 @@
 
 :::tip
-以下步骤说明如何从Exchange导入Stack并通过CloudIaC实现快速部署(以VMWare虚拟机安装Redis服务为例)
+以下步骤说明如何从IaC Store导入Stack并通过CloudIaC实现快速部署(以VMWare虚拟机安装Redis服务为例)
 :::
 #### 导入Stack
 
-在『Stack』页面点击『从Exchange导入』
+在『Stack』页面点击『从IaC Store导入』
 ![picture 39](../images/importStack.png){.img-fluid}
 
 #### 选择Stack

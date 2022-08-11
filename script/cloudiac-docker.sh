@@ -128,10 +128,10 @@ fi
 
 
 echo
-read -p "Add mirror address, default is [https://exchange.cloudiac.org]:  " registry_address </dev/tty
+read -p "Add mirror address, default is [https://store.cloudiac.org]:  " registry_address </dev/tty
 
 if [ -z "${registry_address}" ];then
-  registry_address="https://exchange.cloudiac.org"
+  registry_address="https://store.cloudiac.org"
 fi
 
 
@@ -143,7 +143,7 @@ IAC_ADMIN_EMAIL="$admin"
 ## 平台管理员密码(必填)，要求长度大于 8 且包含字母、数字、特殊字符
 IAC_ADMIN_PASSWORD="$password"
 
-# IaC Exchange 服务地址(选填)，示例：https://exchange.cloudiac.org/
+# IaC Store 服务地址(选填)，示例：https://store.cloudiac.org/
 REGISTRY_ADDRESS="$registry_address"
 
 # 加密密钥配置(必填)

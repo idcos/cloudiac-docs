@@ -376,7 +376,7 @@ limitations under the License.
 
 ```
 module "ecs-instance" {
-    source = "registry.cloudiac.org/shihuanpeng/ecs-instance/tencentcloud"
+    source = "store.cloudiac.org/shihuanpeng/ecs-instance/tencentcloud"
     version = "1.3.0"
     Region = "ap-guangzhou"
     osName  = "centos"
@@ -417,7 +417,7 @@ terraform run
 
 ```
 module "ecs-instance" {
-    source = "registry.cloudiac.org/shihuanpeng/ecs-instance/tencentcloud"
+    source = "store.cloudiac.org/shihuanpeng/ecs-instance/tencentcloud"
     version = "1.3.0"
     Region = var.Region
     osName  = var.osName

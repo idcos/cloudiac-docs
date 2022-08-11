@@ -57,11 +57,11 @@ $ cat provider.tf
 terraform {
   required_providers {
     vsphere = {
-      source  = "registry.cloudiac.org/hashicorp/vsphere"
+      source  = "store.cloudiac.org/hashicorp/vsphere"
       version = "2.0.2"
     }
     ansible = {
-      source = "registry.cloudiac.org/nbering/ansible"
+      source = "store.cloudiac.org/nbering/ansible"
       version = "1.0.4"
     }
   }

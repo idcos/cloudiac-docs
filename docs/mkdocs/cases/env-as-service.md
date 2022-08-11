@@ -64,4 +64,4 @@ ssh-keygen -m PEM -t rsa -b 4096
    ![部署日志](../images/env-as-service-1655798688300.png)
    ![资源](../images/env-as-service-1655798723890.png)
    
-至此，一套基于 Stack 定义的基础设施 + 应用的环境即部署完成，我们在 IaC Exchange 中提供了大量基于最佳实践的 Stack，用户可以直接引入并使用，快速实现一体化环境交付。
+至此，一套基于 Stack 定义的基础设施 + 应用的环境即部署完成，我们在 IaC Store 中提供了大量基于最佳实践的 Stack，用户可以直接引入并使用，快速实现一体化环境交付。

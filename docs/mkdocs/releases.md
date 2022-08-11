@@ -17,7 +17,7 @@
 - 新增，审批时展示资源变更数据
 - 项目管理员新增组织用户邀请权限
 - 新增价格预估功能，在审批部署任务时展示资源变更的预估费用情况
-- 增加 IaC Exchange network mirror 支持，配置了 IaC Exchange 服务地址后会自动启用该地址作为 network mirror server
+- 增加 IaC Store network mirror 支持，配置了 IaC Store 服务地址后会自动启用该地址作为 network mirror server
 - 接入自研 cloudcost 询价服务，目前支持的产品 aliyun ecs/disk/nat/slb/eip/rds/redis/mongodb
 - 支持 ldap ou 或用户预授权
 - 支持 consul 开启 acl 认证

@@ -28,7 +28,7 @@ IaC Store 实现了 Terraform 的 provider registry 协议以及 network mirror 
 ```hcl
 provider_installation {
   network_mirror {
-    url = "https://registry.cloudiac.org/v1/mirrors/providers/"
+    url = "https://store.cloudiac.org/v1/mirrors/providers/"
     // hostname 为 registry.terraform.io 的 provider 走代理
     include = ["registry.terraform.io/*/*"]
   }

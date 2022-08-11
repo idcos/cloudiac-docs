@@ -95,7 +95,7 @@ IAC_ADMIN_EMAIL="$admin"
 ## 平台管理员密码(必填)，要求长度大于 8 且包含字母、数字、特殊字符
 IAC_ADMIN_PASSWORD="$password"
 
-# cloudiac registry 服务地址(选填)，示例：http://registry.cloudiac.org/
+# IaC Store 服务地址(选填)，示例：http://store.cloudiac.org/
 REGISTRY_ADDRESS="$registry_address"
 
 # 加密密钥配置(必填)
@@ -204,7 +204,7 @@ kubectl apply  -f ./k8s-iac-standard/web.yaml
 
 
 ## 启动runner
-docker run -p 19030:19030 --restart=always --name=runner-01 -v /usr/yunji/cloudiac/var:/usr/yunji/cloudiac/var -v /var/run/docker.sock:/var/run/docker.sock -v /usr/yunji/cloudiac/.env:/usr/yunji/cloudiac/.env -d registry.idcos.com/cloudiac/ct-runner:$version
+docker run -p 19030:19030 --restart=always --name=runner-01 -v /usr/yunji/cloudiac/var:/usr/yunji/cloudiac/var -v /var/run/docker.sock:/var/run/docker.sock -v /usr/yunji/cloudiac/.env:/usr/yunji/cloudiac/.env -d store.idcos.com/cloudiac/ct-runner:$version
 
 echo ""
 echo "The access address is your ip port: [$public_ip:32102]"

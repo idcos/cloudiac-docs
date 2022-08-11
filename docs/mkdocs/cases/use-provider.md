@@ -9,7 +9,7 @@ Terraform 提供了众多的 Providers 可以让我们对基础设施进行统�
 ## 场景示例
 下面以使用 IaC Store 中的docker provider作为示例说明
 
-要使用本地发布到 IaC Store 中的 provider，只需要把 tf 文件中对应 provider 的参数 source 以及 version 的值改为对应的 IaC Store 存在的 provider 地址和版本即可，IaC Store 具体有哪些 provider 可查看[https://registry.cloudiac.org/provider](https://registry.cloudiac.org/provider)
+要使用本地发布到 IaC Store 中的 provider，只需要把 tf 文件中对应 provider 的参数 source 以及 version 的值改为对应的 IaC Store 存在的 provider 地址和版本即可，IaC Store 具体有哪些 provider 可查看[https://store.cloudiac.org/provider](https://store.cloudiac.org/provider)
 
 ![img](../images/use-provider1.png)
 
@@ -19,7 +19,7 @@ Terraform 提供了众多的 Providers 可以让我们对基础设施进行统�
 terraform {
     required_providers {
       docker = {
-        source = "registry.cloudiac.org/kreuzwerker/docker"
+        source = "store.cloudiac.org/kreuzwerker/docker"
         version = "2.16.0"
       }
     }

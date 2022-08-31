@@ -108,7 +108,7 @@ nav:
           - "部署安装": cases/iac-store-deploy.md
           - "视频介绍": https://space.bilibili.com/2138433328/channel/seriesdetail?sid=1908688
   
-  - "IaC Store 开发手册":
+  - "IaC 开发手册":
       - "Providers":
           - "Providers 简介": manual/iac-store-providers.md
           - "Providers 发布": cases/provider-publish.md
